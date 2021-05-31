@@ -1,2 +1,179 @@
 2021-05-31 10:16:15,525 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
 2021-05-31 10:16:15,741 [main] ERROR collaborative-todo-app.core - Database configuration not found, :database-url environment variable must be set before running 
+2021-05-31 11:23:20,829 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 11:24:34,091 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 11:24:34,338 [main] ERROR collaborative-todo-app.core - Database configuration not found, :database-url environment variable must be set before running 
+2021-05-31 11:25:48,161 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 11:25:48,542 [main] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app started successfully using the development profile]=- 
+2021-05-31 11:25:48,711 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2021-05-31 11:25:48,729 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 11:25:48,734 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 11:25:48,786 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 11:25:48,790 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-05-31 11:25:48,807 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2021-05-31 11:25:48,808 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
+2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
+2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
+2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
+2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
+2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
+2021-05-31 11:26:29,659 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
+2021-05-31 11:26:29,661 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
+2021-05-31 11:26:29,662 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 11:26:29,669 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
+2021-05-31 11:26:29,669 [Thread-3] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app has shut down successfully]=- 
+2021-05-31 11:26:29,672 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
+2021-05-31 11:26:29,673 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
+2021-05-31 11:26:29,673 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
+2021-05-31 11:26:29,673 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
+2021-05-31 11:26:38,402 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 11:26:42,731 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 11:26:42,735 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 11:26:42,783 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 11:26:42,794 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
+2021-05-31 11:46:51,666 [Thread-4] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 11:47:57,140 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 11:48:00,710 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 11:48:00,716 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 11:48:00,763 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 11:48:00,769 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
+2021-05-31 11:50:07,927 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 11:50:17,461 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 11:50:17,783 [main] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app started successfully using the development profile]=- 
+2021-05-31 11:50:18,023 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2021-05-31 11:50:18,038 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 11:50:18,042 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 11:50:18,090 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 11:50:18,095 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-05-31 11:50:18,112 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2021-05-31 11:50:18,113 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
+2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
+2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
+2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
+2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
+2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
+2021-05-31 11:52:20,562 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 11:52:58,752 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 11:53:02,174 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 11:53:02,178 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 11:53:02,227 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 11:53:02,232 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
+2021-05-31 11:53:23,598 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 11:54:31,140 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 11:54:33,199 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:04:23,068 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:08:40,499 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:08:50,549 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:19:22,127 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:19:27,326 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:20:09,098 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:20:11,230 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:20:17,753 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:20:29,706 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
+2021-05-31 12:20:29,714 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
+2021-05-31 12:20:29,717 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 12:20:29,723 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
+2021-05-31 12:20:29,724 [Thread-3] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app has shut down successfully]=- 
+2021-05-31 12:20:29,729 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
+2021-05-31 12:20:29,729 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
+2021-05-31 12:20:29,729 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
+2021-05-31 12:20:29,729 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
+2021-05-31 12:20:34,235 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 12:20:55,486 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 12:20:55,829 [main] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app started successfully using the development profile]=- 
+2021-05-31 12:20:56,043 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2021-05-31 12:20:56,067 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 12:20:56,071 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 12:20:56,144 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 12:20:56,150 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-05-31 12:20:56,172 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2021-05-31 12:20:56,172 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
+2021-05-31 12:20:56,180 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
+2021-05-31 12:20:56,181 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
+2021-05-31 12:20:56,181 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
+2021-05-31 12:20:56,181 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
+2021-05-31 12:20:56,181 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
+2021-05-31 12:21:00,216 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 12:21:03,746 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 12:21:03,750 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 12:21:03,800 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 12:21:03,805 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
+2021-05-31 12:21:57,035 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:22:17,475 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:23:39,795 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:27:17,406 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:28:23,040 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
+2021-05-31 12:28:23,042 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
+2021-05-31 12:28:23,044 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 12:28:23,048 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
+2021-05-31 12:28:23,049 [Thread-3] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app has shut down successfully]=- 
+2021-05-31 12:28:23,055 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
+2021-05-31 12:28:23,056 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
+2021-05-31 12:28:23,056 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
+2021-05-31 12:28:23,056 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
+2021-05-31 12:28:30,902 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 12:28:31,213 [main] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app started successfully using the development profile]=- 
+2021-05-31 12:28:31,433 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2021-05-31 12:28:31,449 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 12:28:31,453 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 12:28:31,499 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 12:28:31,504 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-05-31 12:28:31,521 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2021-05-31 12:28:31,522 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
+2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
+2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
+2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
+2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
+2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
+2021-05-31 12:34:32,386 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:34:36,431 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
+2021-05-31 12:34:36,432 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
+2021-05-31 12:34:36,433 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 12:34:36,435 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 12:34:36,435 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
+2021-05-31 12:34:36,436 [Thread-3] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app has shut down successfully]=- 
+2021-05-31 12:34:36,439 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
+2021-05-31 12:34:36,439 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
+2021-05-31 12:34:36,439 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
+2021-05-31 12:34:36,439 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
+2021-05-31 12:35:08,057 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 12:35:08,715 [main] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app started successfully using the development profile]=- 
+2021-05-31 12:35:09,166 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2021-05-31 12:35:09,186 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 12:35:09,190 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 12:35:09,251 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 12:35:09,257 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-05-31 12:35:09,278 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2021-05-31 12:35:09,278 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
+2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
+2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
+2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
+2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
+2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
+2021-05-31 12:35:18,781 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 12:35:22,676 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 12:35:22,680 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 12:35:22,736 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 12:35:22,741 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
+2021-05-31 12:35:27,616 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:35:32,705 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 12:38:48,319 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
+2021-05-31 12:38:48,321 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
+2021-05-31 12:38:48,322 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 12:38:48,323 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
+2021-05-31 12:38:48,323 [Thread-3] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app has shut down successfully]=- 
+2021-05-31 12:38:48,325 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
+2021-05-31 12:38:48,326 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
+2021-05-31 12:38:48,326 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
+2021-05-31 12:38:48,326 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
+2021-05-31 12:38:54,843 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 

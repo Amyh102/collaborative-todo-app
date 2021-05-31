@@ -1,78 +1,305 @@
 (ns collaborative-todo-app.events
   (:require
-    [re-frame.core :as rf]
-    [ajax.core :as ajax]
-    [reitit.frontend.easy :as rfe]
-    [reitit.frontend.controllers :as rfc]))
+   [cljs.spec.alpha :as s]
+   [re-frame.core :refer [reg-sub subscribe reg-cofx reg-event-db reg-event-fx reg-fx inject-cofx after path]]
+   [cljs.reader]
+   [ajax.core :as ajax]
+   [reitit.frontend.easy :as rfe]
+   [reitit.frontend.controllers :as rfc]))
 
-;;dispatchers
+;; ----- Schema ----------------------------------------------------------
 
-(rf/reg-event-db
-  :common/navigate
-  (fn [db [_ match]]
-    (let [old-match (:common/route db)
-          new-match (assoc match :controllers
-                                 (rfc/apply-controllers (:controllers old-match) match))]
-      (assoc db :common/route new-match))))
+(s/def ::id int?)
+(s/def ::username string?)
+(s/def ::logged-in boolean?)
+(s/def ::auth-error (s/nilable string?))
+(s/def ::title string?)
+(s/def ::done boolean?)
+(s/def ::todo (s/keys :req-un [::id ::title ::done]))
+(s/def ::todos (s/map-of ::id ::todo))
+(s/def ::showing
+  #{:all
+    :active
+    :done})
+(s/def ::db (s/keys :req-un [::todos ::showing ::logged-in ::auth-error]))
 
-(rf/reg-fx
-  :common/navigate-fx!
-  (fn [[k & [params query]]]
-    (rfe/push-state k params query)))
 
-(rf/reg-event-fx
-  :common/navigate!
-  (fn [_ [_ url-key params query]]
-    {:common/navigate-fx! [url-key params query]}))
+;; ----- Default DB ----------------------------------------------------------
 
-(rf/reg-event-db
-  :set-docs
-  (fn [db [_ docs]]
-    (assoc db :docs docs)))
+(def default-db
+  {:todos (sorted-map)
+   :showing :all
+   :logged-in false
+   :auth-error nil})
 
-(rf/reg-event-fx
-  :fetch-docs
-  (fn [_ _]
-    {:http-xhrio {:method          :get
-                  :uri             "/docs"
-                  :response-format (ajax/raw-response-format)
-                  :on-success       [:set-docs]}}))
+;; (def default-ls
+;;   {:logged-in false
+;;    :current-user nil
+;;    :users {}})
 
-(rf/reg-event-db
-  :common/set-error
-  (fn [db [_ error]]
-    (assoc db :common/error error)))
+;; -- Local Storage  ----------------------------------------------------------
 
-(rf/reg-event-fx
-  :page/init-home
-  (fn [_ _]
-    {:dispatch [:fetch-docs]}))
+(def ls-key "users-reframe")
 
-;;subscriptions
+(defn get-ls-db
+  []
+  (into (sorted-map)
+        (some->> (.getItem js/localStorage ls-key)
+                 (cljs.reader/read-string)
+                 )))
 
-(rf/reg-sub
-  :common/route
-  (fn [db _]
-    (-> db :common/route)))
+(defn set-ls
+  [ls]
+  (.setItem js/localStorage ls-key (str ls)))
 
-(rf/reg-sub
-  :common/page-id
-  :<- [:common/route]
-  (fn [route _]
-    (-> route :data :name)))
+(defn todos->local-store
+  [todos]
+  (let [curr-ls (get-ls-db)
+        logged-in (:logged-in curr-ls)]
+    (if logged-in
+      (set-ls 
+       (assoc-in curr-ls 
+                      [:users (:current-user curr-ls) :todos]
+                      todos))
+      curr-ls)))
 
-(rf/reg-sub
-  :common/page
-  :<- [:common/route]
-  (fn [route _]
-    (-> route :data :view)))
+(defn user->local-store
+  [name username password]
+  (let [curr-ls (get-ls-db)]
+    (set-ls (assoc-in curr-ls
+                      [:users username]
+                      {:name name
+                       :password password
+                       :todos (sorted-map)}))))
 
-(rf/reg-sub
-  :docs
-  (fn [db _]
-    (:docs db)))
+(defn login->local-store
+  [username]
+  (let [curr-ls (get-ls-db)]
+    (set-ls 
+     (assoc (assoc curr-ls :logged-in true) :current-user username))))
 
-(rf/reg-sub
-  :common/error
-  (fn [db _]
-    (:common/error db)))
+(defn logout->local-store
+  []
+  (let [curr-ls (get-ls-db)]
+    (set-ls 
+     (assoc (assoc curr-ls :logged-in false) :current-user nil))))
+
+;; -- cofx Registrations  -----------------------------------------------------
+
+(reg-cofx
+ :local-store
+ (fn [cofx _]
+   (assoc cofx :local-store
+         (get-ls-db))))
+
+;; ----- Interceptors --------------------------------------------------
+
+(defn check-and-throw
+  "Throws an exception if `db` doesn't match the Spec `a-spec`."
+  [a-spec db]
+  (when-not (s/valid? a-spec db)
+    (throw (ex-info (str "spec check failed: " (s/explain-str a-spec db)) {}))))
+
+;; now we create an interceptor using `after`
+;;(def check-spec-interceptor (after (partial check-and-throw :todo-reframe.db/db)))
+
+(def ->local-store (after todos->local-store))
+
+(def todo-interceptors [(path :todos)
+                        ->local-store])
+
+;; -- Helpers -----------------------------------------------------------------
+
+(defn allocate-next-id
+  "Returns the next todo id.
+  Assumes todos are sorted.
+  Returns one more than the current largest id."
+  [todos]
+  ((fnil inc 0) (last (keys todos))))
+
+
+;; -- Event Handlers ----------------------------------------------------------
+
+
+;; DB Initializer
+(reg-event-fx
+ :initialise-db
+ [(inject-cofx :local-store)]
+ (fn [{:keys [db local-store]} _]
+   (if (:logged-in local-store)
+     {:db {:todos (get-in local-store 
+                          [:users 
+                           (:current-user local-store) 
+                           :todos])
+           :showing :all
+           :logged-in true
+           :auth-error nil}}
+     {:db default-db})))
+
+(reg-fx
+ :ls
+ (fn [default-ls]
+   (set-ls default-ls)))
+
+;; Handles the Login Event
+
+(reg-fx
+ :login-user
+ (fn [username]
+   (login->local-store username)))
+
+(reg-event-fx
+ :login
+ [(inject-cofx :local-store)]
+ (fn [{:keys [db local-store]} 
+      [_ {:keys [username password]}]]
+   (println local-store)
+   (println (:users local-store))
+   (if (contains? (:users local-store) username)
+     (if (= (get-in local-store [:users username :password]) password)
+       {:db (assoc (assoc (assoc db :logged-in true) :auth-error nil) :todos 
+                   (get-in local-store [:users username :todos]))
+        :login-user username}
+       {:db (assoc db :auth-error "Incorrect Password")})
+     {:db (assoc db :auth-error "Username not found")})))
+
+
+;; Handles the SignIn Event
+
+(reg-fx
+ :new-user
+ (fn [{:keys [name username password]}]
+   (user->local-store name username password)))
+
+(reg-event-fx
+ :signIn
+ [(inject-cofx :local-store)]
+ (fn [{:keys [db local-store]}
+      [_ data]]
+   (if (contains? (:users local-store) (:username data))
+     {:db (assoc db :auth-error "Username Already Exists")}
+     {:db (assoc db :auth-error nil)
+      :new-user data})))
+
+;; Handles the LogOut Event
+
+(reg-event-fx
+ :logout
+ (fn [{:keys [db]} _]
+   {:db (assoc (assoc db :logged-in false) :todos (sorted-map))
+    :logout-user nil}))
+
+(reg-fx
+ :logout-user
+ (fn [_]
+   (logout->local-store)))
+
+;; Other Todo Add, Update and Delete Event Handlers
+
+(reg-event-db
+ :set-showing
+ (fn [db [_ new-filter-kw]]
+   (assoc db :showing new-filter-kw)))
+
+(reg-event-db
+ :clear-auth-error
+ (fn [db _]
+   (assoc db :auth-error nil)))
+
+(reg-event-db
+ :add-todo
+ todo-interceptors
+(fn [todos [_ text]]
+    (let [id (allocate-next-id todos)]
+      (assoc todos id {:id id :title text :done false}))))
+
+(reg-event-db
+ :toggle-done
+ todo-interceptors
+ (fn [todos [_ id]]
+   (update-in todos [id :done] not)))
+
+(reg-event-db
+ :save
+ todo-interceptors
+ (fn [todos [_ id title]]
+   (assoc-in todos [id :title] title)))
+
+(reg-event-db
+ :delete-todo
+ todo-interceptors
+ (fn [todos [_ id]]
+   (dissoc todos id)))
+
+(reg-event-db
+ :clear-completed
+ todo-interceptors
+ (fn [todos _]
+   (let [done-ids (->> (vals todos)        
+                       (filter :done)
+                       (map :id))]
+     (reduce dissoc todos done-ids))))
+
+(reg-event-db
+ :complete-all-toggle
+ todo-interceptors
+ (fn [todos _]
+   (let [new-done (not-every? :done (vals todos))]
+     (reduce #(assoc-in %1 [%2 :done] new-done)
+             todos
+             (keys todos)))))
+
+
+;; Subscriptions
+
+(reg-sub
+ :showing        
+ (fn [db _]
+   (:showing db)))
+
+(reg-sub
+ :auth-error
+ (fn [db _]
+   (:auth-error db)))
+
+(reg-sub
+ :todos
+ (fn [db _]
+   (:todos db)))
+
+(reg-sub 
+ :logged-in
+ (fn [_ _]
+   (let [curr-ls (get-ls-db)]
+     (:logged-in curr-ls))))
+
+(reg-sub
+  :visible-todos
+ (fn [_ _]
+   [(subscribe [:todos])
+    (subscribe [:showing])])
+ (fn [[todos showing] _]
+    (let [filter-fn (case showing
+                      :active #(false? (:done (second %)))
+                      :done   #(:done (second %))
+                      :all    identity)]
+      (filter filter-fn todos))))
+
+(reg-sub
+ :all-complete?
+ :<- [:todos]
+ (fn [todos _]
+   (every? #(:done (second %)) todos)))
+
+(reg-sub
+ :completed-count
+ :<- [:todos]
+ (fn [todos _]
+   (count (filter #(:done (second %)) todos))))
+
+(reg-sub
+ :footer-counts
+ :<- [:todos]
+ :<- [:completed-count]
+ (fn [[todos completed] _]
+   [(- (count todos) completed) completed]))
