@@ -108,9 +108,11 @@
 
 
 (defn todo-app
-  []
+  [display-dash]
   [:<>
    [:button#logout_button {:on-click #(dispatch [:logout nil])} "Log Out"]
+   [:button#dashboard_button {:on-click #((dispatch [:go-to-dashboard])
+                                          (reset! display-dash true))} "Go back to Dashboard"]
    [:section#todoapp
     [task-entry]
     (when (seq @(subscribe [:todos]))
@@ -128,6 +130,37 @@
            :required true
            :value @atom-value
            :on-change (fn [x] (reset! atom-value (.. x -target -value)))}])
+
+(defn dashboard
+  [display-dash]
+  (let [todo-list-id (reagent/atom "")
+        new-list-title (reagent/atom "")
+        subbed-lists @(subscribe [:subbed-lists])
+        all-todo-lists @(subscribe [:all-todo-lists])]
+    [:div
+     [:button#logout_button {:on-click #(dispatch [:logout nil])} "Log Out"]
+     [:h1 "My Todo Lists"]
+     "Have a code for an existing Todo list?"
+     [:br]
+     [:input {:type "text"
+              :placeholder "Enter code here"
+              :on-change   #(reset! todo-list-id (-> % .-target .-value))}]
+     [:input {:type "button"
+              :value "Add"
+              :on-click #(dispatch [:sub-to-todo-list (int @todo-list-id)])}]
+     [:br] [:br]
+     "Create a new Todo list:"
+     [:br]
+     [:input {:type "text"
+              :placeholder "Enter a title here"
+              :on-change   #(reset! new-list-title (-> % .-target .-value))}]
+     [:input {:type "button"
+              :value "Create"
+              :on-click #((reset! display-dash false)
+                          (dispatch [:create-todo-list @new-list-title]))}]
+     [:ul
+      (for [x subbed-lists]
+             [:li (:title (get all-todo-lists x))])]]))
 
 (defn signIn
   [form]
@@ -187,6 +220,11 @@
        "Sign Up"]]]))
 
 
+(defn home
+  [display-dash]
+  (if @display-dash
+    [dashboard display-dash]
+    [todo-app display-dash]))
 
 (defn auth
   [form]
@@ -199,9 +237,10 @@
 (defn main
   []
   (let [loggedIn @(subscribe [:logged-in])
-        form (reagent/atom false)]
+        form (reagent/atom false)
+        display-dash (reagent/atom true)]
     (if loggedIn
-      [todo-app]
+      [home display-dash]
       [auth form])))
 
 ;; (def router
