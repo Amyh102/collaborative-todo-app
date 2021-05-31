@@ -1,0 +1,2 @@
+2021-05-31 10:16:15,525 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 10:16:15,741 [main] ERROR collaborative-todo-app.core - Database configuration not found, :database-url environment variable must be set before running 
