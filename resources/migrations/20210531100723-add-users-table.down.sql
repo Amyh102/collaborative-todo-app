@@ -1,1 +1,7 @@
-DROP TABLE users;
+DO
+$$
+    BEGIN
+        DROP TABLE [IF EXISTS] users;
+        DROP TABLE [IF EXISTS] tasks;
+    END
+$$;

@@ -267,3 +267,219 @@ org.postgresql.util.PSQLException: FATAL: database "test" does not exist
 2021-05-31 13:03:51,894 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
 2021-05-31 13:03:51,894 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
 2021-05-31 13:03:51,895 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
+2021-05-31 13:04:34,548 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 13:04:34,901 [main] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app started successfully using the development profile]=- 
+2021-05-31 13:04:35,095 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2021-05-31 13:04:35,111 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 13:04:35,115 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 13:04:35,162 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 13:04:35,167 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-05-31 13:04:35,184 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2021-05-31 13:04:35,184 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
+2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
+2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
+2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
+2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
+2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
+2021-05-31 13:07:22,166 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
+2021-05-31 13:07:22,167 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
+2021-05-31 13:07:22,169 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 13:07:22,171 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
+2021-05-31 13:07:22,172 [Thread-3] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app has shut down successfully]=- 
+2021-05-31 13:07:22,176 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
+2021-05-31 13:07:22,176 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
+2021-05-31 13:07:22,176 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
+2021-05-31 13:07:22,176 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
+2021-05-31 13:09:08,405 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 13:09:08,638 [main] INFO  migratus.core - Starting migrations 
+2021-05-31 13:09:08,706 [main] INFO  migratus.database - creating migration table 'schema_migrations' 
+2021-05-31 13:09:08,741 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0x1325b6a6 /Users/parthmodi/Documents/Projects/collaborative-todo-app/resources/migrations] 
+2021-05-31 13:09:08,746 [main] INFO  migratus.core - Running up for [20210531100723] 
+2021-05-31 13:09:08,746 [main] INFO  migratus.core - Up 20210531100723-add-users-table 
+2021-05-31 13:09:08,752 [main] DEBUG migratus.migration.sql - found 1 up migrations 
+2021-05-31 13:09:08,764 [main] ERROR migratus.migration.sql - failed to execute command:
+ CREATE TABLE users (
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+subscriptions integer[]
+);
+
+CREATE TABLE tasks (
+list_id serial PRIMARY KEY,
+title  VARCHAR NOT NULL,
+list_of_todos jsonb,
+subscribed_users integer[]
+);
+ 
+2021-05-31 13:09:08,764 [main] ERROR migratus.migration.sql - Too many update results were returned. 
+2021-05-31 13:09:08,764 [main] ERROR migratus.database - Migration add-users-table failed because Batch entry 1 <unknown> was aborted: Too many update results were returned.  Call getNextException to see other errors in the batch. backing out 
+2021-05-31 13:09:08,764 [main] DEBUG migratus.migration.sql - found 1 down migrations 
+2021-05-31 13:09:08,771 [main] INFO  migratus.core - Ending migrations 
+2021-05-31 13:15:45,617 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 13:15:45,826 [main] INFO  migratus.core - Starting migrations 
+2021-05-31 13:15:45,884 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0xf979195 /Users/parthmodi/Documents/Projects/collaborative-todo-app/resources/migrations] 
+2021-05-31 13:15:45,888 [main] INFO  migratus.core - Running up for [20210531100723] 
+2021-05-31 13:15:45,888 [main] INFO  migratus.core - Up 20210531100723-add-users-table 
+2021-05-31 13:15:45,892 [main] DEBUG migratus.migration.sql - found 1 up migrations 
+2021-05-31 13:15:45,940 [main] ERROR migratus.migration.sql - failed to execute command:
+ DO $$BEGIN
+CREATE TABLE users (
+username VARCHAR ( 50 ) UNIQUE NOT NULL,
+password VARCHAR ( 50 ) NOT NULL,
+subscriptions integer[]
+)
+
+CREATE TABLE tasks (
+list_id serial PRIMARY KEY,
+title  VARCHAR NOT NULL,
+list_of_todos jsonb,
+subscribed_users integer[]
+)
+END$$;
+ 
+2021-05-31 13:15:45,940 [main] ERROR migratus.migration.sql - ERROR: unexpected end of function definition at end of input
+  Position: 262 
+2021-05-31 13:15:45,940 [main] ERROR migratus.database - Migration add-users-table failed because Batch entry 0 DO $$BEGIN
+CREATE TABLE users (
+username VARCHAR ( 50 ) UNIQUE NOT NULL,
+password VARCHAR ( 50 ) NOT NULL,
+subscriptions integer[]
+)
+
+CREATE TABLE tasks (
+list_id serial PRIMARY KEY,
+title  VARCHAR NOT NULL,
+list_of_todos jsonb,
+subscribed_users integer[]
+)
+END$$ was aborted: ERROR: unexpected end of function definition at end of input
+  Position: 262  Call getNextException to see other errors in the batch. backing out 
+2021-05-31 13:15:45,941 [main] DEBUG migratus.migration.sql - found 1 down migrations 
+2021-05-31 13:15:45,941 [main] ERROR migratus.migration.sql - failed to execute command:
+ DROP TABLE users;
+ 
+2021-05-31 13:15:45,941 [main] ERROR migratus.migration.sql - ERROR: current transaction is aborted, commands ignored until end of transaction block 
+2021-05-31 13:15:45,946 [main] DEBUG migratus.database - As expected, one of the statements failed in add-users-table while backing out the migration 
+java.sql.BatchUpdateException: Batch entry 0 DROP TABLE users was aborted: ERROR: current transaction is aborted, commands ignored until end of transaction block  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:169) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2286) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:521) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:870) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:893) ~[postgresql-42.2.18.jar:42.2.18]
+	at clojure.java.jdbc$execute_batch.invokeStatic(jdbc.clj:598) ~[na:na]
+	at clojure.java.jdbc$execute_batch.invoke(jdbc.clj:591) ~[na:na]
+	at clojure.java.jdbc$db_do_commands$fn__14518.invoke(jdbc.clj:958) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:860) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at clojure.java.jdbc$db_do_commands.invokeStatic(jdbc.clj:957) ~[na:na]
+	at clojure.java.jdbc$db_do_commands.invoke(jdbc.clj:942) ~[na:na]
+	at clojure.java.jdbc$db_do_commands.invokeStatic(jdbc.clj:951) ~[na:na]
+	at clojure.java.jdbc$db_do_commands.invoke(jdbc.clj:942) ~[na:na]
+	at migratus.migration.sql$execute_command$fn__19371.invoke(sql.clj:63) ~[na:na]
+	at migratus.migration.sql$execute_command.invokeStatic(sql.clj:62) ~[na:na]
+	at migratus.migration.sql$execute_command.invoke(sql.clj:59) ~[na:na]
+	at migratus.migration.sql$run_sql_STAR_.invokeStatic(sql.clj:80) ~[na:na]
+	at migratus.migration.sql$run_sql_STAR_.invoke(sql.clj:76) ~[na:na]
+	at migratus.migration.sql$run_sql$fn__19389.invoke(sql.clj:88) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:860) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at migratus.migration.sql$run_sql.invokeStatic(sql.clj:86) ~[na:na]
+	at migratus.migration.sql$run_sql.invoke(sql.clj:82) ~[na:na]
+	at migratus.migration.sql.SqlMigration.down(sql.clj:109) ~[na:na]
+	at migratus.database$migrate_up_STAR_$fn__19627.invoke(database.clj:71) ~[na:na]
+	at migratus.database$migrate_up_STAR_.invokeStatic(database.clj:70) ~[na:na]
+	at migratus.database$migrate_up_STAR_.invoke(database.clj:56) ~[na:na]
+	at migratus.database.Database$fn__19697.invoke(database.clj:262) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:807) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at migratus.database.Database.migrate_up(database.clj:261) ~[na:na]
+	at migratus.core$up_STAR_.invokeStatic(core.clj:79) ~[na:na]
+	at migratus.core$up_STAR_.invoke(core.clj:77) ~[na:na]
+	at migratus.core$migrate_up_STAR_.invokeStatic(core.clj:90) ~[na:na]
+	at migratus.core$migrate_up_STAR_.invoke(core.clj:81) ~[na:na]
+	at migratus.core$migrate_STAR_.invokeStatic(core.clj:103) ~[na:na]
+	at migratus.core$migrate_STAR_.invoke(core.clj:99) ~[na:na]
+	at clojure.core$partial$fn__5857.invoke(core.clj:2629) ~[clojure-1.10.3.jar:na]
+	at migratus.core$run.invokeStatic(core.clj:53) ~[na:na]
+	at migratus.core$run.invoke(core.clj:49) ~[na:na]
+	at migratus.core$migrate.invokeStatic(core.clj:110) ~[na:na]
+	at migratus.core$migrate.invoke(core.clj:105) ~[na:na]
+	at luminus_migrations.core$fn__19848.invokeStatic(core.clj:44) ~[na:na]
+	at luminus_migrations.core$fn__19848.invoke(core.clj:41) ~[na:na]
+	at luminus_migrations.core$migrate.invokeStatic(core.clj:98) ~[na:na]
+	at luminus_migrations.core$migrate.invoke(core.clj:84) ~[na:na]
+	at collaborative_todo_app.core$_main.invokeStatic(core.clj:74) ~[na:na]
+	at collaborative_todo_app.core$_main.doInvoke(core.clj:59) ~[na:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:408) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Var.invoke(Var.java:384) ~[clojure-1.10.3.jar:na]
+	at user$eval20430.invokeStatic(form-init10101103146431037307.clj:1) ~[na:na]
+	at user$eval20430.invoke(form-init10101103146431037307.clj:1) ~[na:na]
+	at clojure.lang.Compiler.eval(Compiler.java:7181) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Compiler.eval(Compiler.java:7171) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Compiler.load(Compiler.java:7640) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Compiler.loadFile(Compiler.java:7578) ~[clojure-1.10.3.jar:na]
+	at clojure.main$load_script.invokeStatic(main.clj:475) ~[clojure-1.10.3.jar:na]
+	at clojure.main$init_opt.invokeStatic(main.clj:477) ~[clojure-1.10.3.jar:na]
+	at clojure.main$init_opt.invoke(main.clj:477) ~[clojure-1.10.3.jar:na]
+	at clojure.main$initialize.invokeStatic(main.clj:508) ~[clojure-1.10.3.jar:na]
+	at clojure.main$null_opt.invokeStatic(main.clj:542) ~[clojure-1.10.3.jar:na]
+	at clojure.main$null_opt.invoke(main.clj:539) ~[clojure-1.10.3.jar:na]
+	at clojure.main$main.invokeStatic(main.clj:664) ~[clojure-1.10.3.jar:na]
+	at clojure.main$main.doInvoke(main.clj:616) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.RestFn.applyTo(RestFn.java:137) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Var.applyTo(Var.java:705) ~[clojure-1.10.3.jar:na]
+	at clojure.main.main(main.java:40) ~[clojure-1.10.3.jar:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285) ~[postgresql-42.2.18.jar:42.2.18]
+	... 72 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: unexpected end of function definition at end of input
+  Position: 262
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:521) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:870) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:893) ~[postgresql-42.2.18.jar:42.2.18]
+	at clojure.java.jdbc$execute_batch.invokeStatic(jdbc.clj:598) ~[na:na]
+	at clojure.java.jdbc$execute_batch.invoke(jdbc.clj:591) ~[na:na]
+	at clojure.java.jdbc$db_do_commands$fn__14518.invoke(jdbc.clj:958) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:860) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at clojure.java.jdbc$db_do_commands.invokeStatic(jdbc.clj:957) ~[na:na]
+	at clojure.java.jdbc$db_do_commands.invoke(jdbc.clj:942) ~[na:na]
+	at clojure.java.jdbc$db_do_commands.invokeStatic(jdbc.clj:951) ~[na:na]
+	at clojure.java.jdbc$db_do_commands.invoke(jdbc.clj:942) ~[na:na]
+	at migratus.migration.sql$execute_command$fn__19371.invoke(sql.clj:63) ~[na:na]
+	at migratus.migration.sql$execute_command.invokeStatic(sql.clj:62) ~[na:na]
+	at migratus.migration.sql$execute_command.invoke(sql.clj:59) ~[na:na]
+	at migratus.migration.sql$run_sql_STAR_.invokeStatic(sql.clj:80) ~[na:na]
+	at migratus.migration.sql$run_sql_STAR_.invoke(sql.clj:76) ~[na:na]
+	at migratus.migration.sql$run_sql$fn__19389.invoke(sql.clj:88) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:860) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
+	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
+	at migratus.migration.sql$run_sql.invokeStatic(sql.clj:86) ~[na:na]
+	at migratus.migration.sql$run_sql.invoke(sql.clj:82) ~[na:na]
+	at migratus.migration.sql.SqlMigration.up(sql.clj:105) ~[na:na]
+	at migratus.database$migrate_up_STAR_.invokeStatic(database.clj:62) ~[na:na]
+	... 43 common frames omitted
+2021-05-31 13:15:45,948 [main] INFO  migratus.core - Ending migrations 
+2021-05-31 13:18:48,563 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 13:18:48,776 [main] INFO  migratus.core - Starting migrations 
+2021-05-31 13:18:48,835 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0xf979195 /Users/parthmodi/Documents/Projects/collaborative-todo-app/resources/migrations] 
+2021-05-31 13:18:48,839 [main] INFO  migratus.core - Running up for [20210531100723] 
+2021-05-31 13:18:48,839 [main] INFO  migratus.core - Up 20210531100723-add-users-table 
+2021-05-31 13:18:48,844 [main] DEBUG migratus.migration.sql - found 1 up migrations 
+2021-05-31 13:18:48,864 [main] DEBUG migratus.database - marking 20210531100723 complete 
+2021-05-31 13:18:48,868 [main] INFO  migratus.core - Ending migrations 
