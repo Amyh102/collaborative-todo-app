@@ -7,22 +7,6 @@
    [reitit.frontend.easy :as rfe]
    [reitit.frontend.controllers :as rfc]))
 
-;; ----- Schema ----------------------------------------------------------
-
-(s/def ::id int?)
-(s/def ::username string?)
-(s/def ::logged-in boolean?)
-(s/def ::auth-error (s/nilable string?))
-(s/def ::title string?)
-(s/def ::done boolean?)
-(s/def ::todo (s/keys :req-un [::id ::title ::done]))
-(s/def ::todos (s/map-of ::id ::todo))
-(s/def ::showing
-  #{:all
-    :active
-    :done})
-(s/def ::db (s/keys :req-un [::todos ::showing ::logged-in ::auth-error]))
-
 
 ;; ----- Default DB ----------------------------------------------------------
 
@@ -31,11 +15,6 @@
    :showing :all
    :logged-in false
    :auth-error nil})
-
-;; (def default-ls
-;;   {:logged-in false
-;;    :current-user nil
-;;    :users {}})
 
 ;; -- Local Storage  ----------------------------------------------------------
 
@@ -93,15 +72,6 @@
          (get-ls-db))))
 
 ;; ----- Interceptors --------------------------------------------------
-
-(defn check-and-throw
-  "Throws an exception if `db` doesn't match the Spec `a-spec`."
-  [a-spec db]
-  (when-not (s/valid? a-spec db)
-    (throw (ex-info (str "spec check failed: " (s/explain-str a-spec db)) {}))))
-
-;; now we create an interceptor using `after`
-;;(def check-spec-interceptor (after (partial check-and-throw :todo-reframe.db/db)))
 
 (def ->local-store (after todos->local-store))
 

@@ -177,3 +177,93 @@
 2021-05-31 12:38:48,326 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
 2021-05-31 12:38:48,326 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
 2021-05-31 12:38:54,843 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 12:54:40,394 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 12:54:41,751 [main] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization. 
+org.postgresql.util.PSQLException: FATAL: database "test" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2665) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:147) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:273) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.Driver.makeConnection(Driver.java:465) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.Driver.connect(Driver.java:264) ~[postgresql-42.2.18.jar:42.2.18]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81) ~[HikariCP-3.4.5.jar:na]
+	at hikari_cp.core$make_datasource.invokeStatic(core.clj:268) ~[na:na]
+	at hikari_cp.core$make_datasource.invoke(core.clj:265) ~[na:na]
+	at conman.core$connect_BANG_.invokeStatic(core.clj:162) ~[na:na]
+	at conman.core$connect_BANG_.invoke(core.clj:158) ~[na:na]
+	at collaborative_todo_app.db.core$eval15371$fn__15372.invoke(core.clj:15) ~[na:na]
+	at mount.core$record_BANG_.invokeStatic(core.cljc:74) ~[na:na]
+	at mount.core$record_BANG_.invoke(core.cljc:73) ~[na:na]
+	at mount.core$up$fn__441.invoke(core.cljc:81) ~[na:na]
+	at mount.core$up.invokeStatic(core.cljc:80) ~[na:na]
+	at mount.core$up.invoke(core.cljc:78) ~[na:na]
+	at mount.core$bring.invokeStatic(core.cljc:247) ~[na:na]
+	at mount.core$bring.invoke(core.cljc:239) ~[na:na]
+	at mount.core$start.invokeStatic(core.cljc:289) ~[na:na]
+	at mount.core$start.doInvoke(core.cljc:281) ~[na:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:397) ~[clojure-1.10.3.jar:na]
+	at mount.core$start_with_args.invokeStatic(core.cljc:389) ~[na:na]
+	at mount.core$start_with_args.doInvoke(core.cljc:385) ~[na:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:410) ~[clojure-1.10.3.jar:na]
+	at collaborative_todo_app.core$start_app.invokeStatic(core.clj:52) ~[na:na]
+	at collaborative_todo_app.core$start_app.invoke(core.clj:51) ~[na:na]
+	at collaborative_todo_app.core$_main.invokeStatic(core.clj:77) ~[na:na]
+	at collaborative_todo_app.core$_main.doInvoke(core.clj:59) ~[na:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:397) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Var.invoke(Var.java:380) ~[clojure-1.10.3.jar:na]
+	at user$eval20430.invokeStatic(form-init7702750015765963099.clj:1) ~[na:na]
+	at user$eval20430.invoke(form-init7702750015765963099.clj:1) ~[na:na]
+	at clojure.lang.Compiler.eval(Compiler.java:7181) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Compiler.eval(Compiler.java:7171) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Compiler.load(Compiler.java:7640) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Compiler.loadFile(Compiler.java:7578) ~[clojure-1.10.3.jar:na]
+	at clojure.main$load_script.invokeStatic(main.clj:475) ~[clojure-1.10.3.jar:na]
+	at clojure.main$init_opt.invokeStatic(main.clj:477) ~[clojure-1.10.3.jar:na]
+	at clojure.main$init_opt.invoke(main.clj:477) ~[clojure-1.10.3.jar:na]
+	at clojure.main$initialize.invokeStatic(main.clj:508) ~[clojure-1.10.3.jar:na]
+	at clojure.main$null_opt.invokeStatic(main.clj:542) ~[clojure-1.10.3.jar:na]
+	at clojure.main$null_opt.invoke(main.clj:539) ~[clojure-1.10.3.jar:na]
+	at clojure.main$main.invokeStatic(main.clj:664) ~[clojure-1.10.3.jar:na]
+	at clojure.main$main.doInvoke(main.clj:616) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.RestFn.applyTo(RestFn.java:137) ~[clojure-1.10.3.jar:na]
+	at clojure.lang.Var.applyTo(Var.java:705) ~[clojure-1.10.3.jar:na]
+	at clojure.main.main(main.java:40) ~[clojure-1.10.3.jar:na]
+2021-05-31 12:54:45,824 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 12:54:49,600 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 12:54:49,605 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 12:54:49,673 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 12:54:49,683 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
+2021-05-31 13:00:50,765 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-05-31 13:00:51,057 [main] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app started successfully using the development profile]=- 
+2021-05-31 13:00:51,219 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2021-05-31 13:00:51,233 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-05-31 13:00:51,237 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-05-31 13:00:51,278 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-05-31 13:00:51,284 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-05-31 13:00:51,301 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2021-05-31 13:00:51,301 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
+2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
+2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
+2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
+2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
+2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
+2021-05-31 13:03:21,886 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-05-31 13:03:51,884 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
+2021-05-31 13:03:51,885 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
+2021-05-31 13:03:51,887 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-05-31 13:03:51,889 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
+2021-05-31 13:03:51,889 [Thread-3] INFO  collaborative-todo-app.env - 
+-=[collaborative-todo-app has shut down successfully]=- 
+2021-05-31 13:03:51,894 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
+2021-05-31 13:03:51,894 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
+2021-05-31 13:03:51,894 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
+2021-05-31 13:03:51,895 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
