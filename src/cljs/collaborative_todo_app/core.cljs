@@ -15,7 +15,7 @@
   (:import goog.History))
 
 (defn todo-input [{:keys [title on-save on-stop]}]
-  (let [val  (reagent/atom title)
+  (let [val (reagent/atom title)
         stop #(do (reset! val "")
                   (when on-stop (on-stop)))
         save #(let [v (-> @val str string/trim)]
@@ -42,8 +42,8 @@
                         (when @editing "editing"))}
        [:div.view
         [:input.toggle
-         {:type "checkbox"
-          :checked done
+         {:type      "checkbox"
+          :checked   done
           :on-change #(dispatch [:toggle-done id])}]
         [:label
          {:on-double-click #(reset! editing true)}
@@ -52,8 +52,8 @@
          {:on-click #(dispatch [:delete-todo id])}]]
        (when @editing
          [todo-input
-          {:class "edit"
-           :title title
+          {:class   "edit"
+           :title   title
            :on-save #(if (seq %)
                        (dispatch [:save id %])
                        (dispatch [:delete-todo id]))
@@ -66,31 +66,31 @@
         all-complete? @(subscribe [:all-complete?])]
     [:section#main
      [:input#toggle-all
-      {:type "checkbox"
-       :checked all-complete?
+      {:type      "checkbox"
+       :checked   all-complete?
        :on-change #(dispatch [:complete-all-toggle])}]
      [:label
       {:for "toggle-all"}
       "Mark all as complete"]
      [:ul#todo-list
-      (for [todo  visible-todos]
+      (for [todo visible-todos]
         ^{:key (first todo)} [todo-item (second todo)])]]))
 
 
 (defn footer-controls
   []
   (let [[active done] @(subscribe [:footer-counts])
-        showing       @(subscribe [:showing])
-        a-fn          (fn [filter-kw txt]
-                        [:a {:class (when (= filter-kw showing) "selected")
-                             :on-click #(dispatch [:set-showing filter-kw])} txt])]
+        showing @(subscribe [:showing])
+        a-fn (fn [filter-kw txt]
+               [:a {:class    (when (= filter-kw showing) "selected")
+                    :on-click #(dispatch [:set-showing filter-kw])} txt])]
     [:footer#footer
      [:span#todo-count
       [:strong active] " " (case active 1 "item" "items") " left"]
      [:ul#filters
-      [:li (a-fn :all    "All")]
+      [:li (a-fn :all "All")]
       [:li (a-fn :active "Active")]
-      [:li (a-fn :done   "Completed")]]
+      [:li (a-fn :done "Completed")]]
      (when (pos? done)
        [:button#clear-completed {:on-click #(dispatch [:clear-completed])}
         "Clear completed"])]))
@@ -98,13 +98,14 @@
 
 (defn task-entry
   []
-  [:header#header
-   [:h1 "todos"]
-   [todo-input
-    {:id "new-todo"
-     :placeholder "What needs to be done?"
-     :on-save #(when (seq %)
-                 (dispatch [:add-todo %]))}]])
+  (let [list-title @(subscribe [:current-list])]
+    [:header#header
+     [:h1 list-title]
+     [todo-input
+      {:id          "new-todo"
+       :placeholder "What needs to be done?"
+       :on-save     #(when (seq %)
+                       (dispatch [:add-todo %]))}]]))
 
 
 (defn todo-app
@@ -124,11 +125,11 @@
 (defn input-element
   "An input element which updates its value on change"
   [id name type atom-value]
-  [:input {:id id
-           :name name
-           :type type
-           :required true
-           :value @atom-value
+  [:input {:id        id
+           :name      name
+           :type      type
+           :required  true
+           :value     @atom-value
            :on-change (fn [x] (reset! atom-value (.. x -target -value)))}])
 
 (defn dashboard
@@ -142,25 +143,29 @@
      [:h1 "My Todo Lists"]
      "Have a code for an existing Todo list?"
      [:br]
-     [:input {:type "text"
+     [:input {:type        "text"
               :placeholder "Enter code here"
               :on-change   #(reset! todo-list-id (-> % .-target .-value))}]
-     [:input {:type "button"
-              :value "Add"
+     [:input {:type     "button"
+              :value    "Add"
               :on-click #(dispatch [:sub-to-todo-list (int @todo-list-id)])}]
      [:br] [:br]
      "Create a new Todo list:"
      [:br]
-     [:input {:type "text"
+     [:input {:type        "text"
               :placeholder "Enter a title here"
               :on-change   #(reset! new-list-title (-> % .-target .-value))}]
-     [:input {:type "button"
-              :value "Create"
+     [:input {:type     "button"
+              :value    "Create"
               :on-click #((reset! display-dash false)
                           (dispatch [:create-todo-list @new-list-title]))}]
      [:ul
-      (for [x subbed-lists]
-             [:li (:title (get all-todo-lists x))])]]))
+      (for [id subbed-lists]
+        ^{:key id} [:li
+                    [:input {:type "button"
+                             :value (:title (get all-todo-lists id))
+                             :on-click #((reset! display-dash false)
+                                         (dispatch [:set-current-list id]))}]])]]))
 
 (defn signIn
   [form]
@@ -182,12 +187,12 @@
        [input-element "password" "password" "text" password]]]
      (when auth-error [:div#auth-error auth-error])
      [:div.buttons
-      [:button {:class "button button-block"
-                :on-click #((dispatch [:signIn {:name @name
+      [:button {:class    "button button-block"
+                :on-click #((dispatch [:signIn {:name     @name
                                                 :username @username
                                                 :password @password}]))}
        "Get Started"]
-      [:button {:class "button button-block"
+      [:button {:class    "button button-block"
                 :on-click #((reset! form false)
                             (dispatch [:clear-auth-error nil]))}
        "Log In"]]]))
@@ -208,13 +213,13 @@
        [input-element "password" "password" "text" password]]]
      (when auth-error [:div#auth-error auth-error])
      [:div.buttons
-      [:button {:type "submit"
-                :class "button button-block"
+      [:button {:type     "submit"
+                :class    "button button-block"
                 :on-click #((dispatch [:login {:username @username
-                                              :password @password}])
+                                               :password @password}])
                             (dispatch [:clear-auth-error nil]))}
        "LogIn"]
-      [:button {:class "button button-block"
+      [:button {:class    "button button-block"
                 :on-click #((reset! form true)
                             (dispatch [:clear-auth-error nil]))}
        "Sign Up"]]]))
@@ -228,11 +233,11 @@
 
 (defn auth
   [form]
-    [:div.form
-     [:div.tab-content
-      (if @form
-        [signIn form]
-        [logIn form])]])
+  [:div.form
+   [:div.tab-content
+    (if @form
+      [signIn form]
+      [logIn form])]])
 
 (defn main
   []

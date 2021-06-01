@@ -1,7 +1,7 @@
 (ns collaborative-todo-app.events
   (:require
     [cljs.spec.alpha :as s]
-    [re-frame.core :refer [reg-sub subscribe reg-cofx reg-event-db reg-event-fx reg-fx inject-cofx after path]]
+    [re-frame.core :refer [reg-sub subscribe reg-cofx reg-event-db reg-event-fx reg-fx inject-cofx after path dispatch]]
     [cljs.reader]
     [ajax.core :as ajax]
     [reitit.frontend.easy :as rfe]
@@ -34,9 +34,8 @@
 
 (defn todos->local-store
   [todos]
-  (let [curr-ls (get-ls-db)
-        showing-list (:showing-list curr-ls)]
-    (if showing-list
+  (let [curr-ls (get-ls-db)]
+    (if (:showing-list curr-ls)
       (set-ls
         (assoc-in curr-ls
                   [:todo-lists (:current-list curr-ls) :todos]
@@ -233,16 +232,20 @@
 
 ;; Event handlers for creating/subscribing to a new todo-list
 
-(reg-fx
+(reg-event-fx
   :set-current-list
-  (fn [id]
-    (let [curr-ls (get-ls-db)]
-      (set-ls (assoc curr-ls :current-list id)))))
+  [(inject-cofx :local-store)]
+  (fn [{:keys [db local-store]} [_ id]]
+    (if (nil? id)
+      {:ls (assoc (assoc local-store :current-list id) :showing-list false)
+       :db (assoc db :todos nil)}
+      {:ls (assoc (assoc local-store :current-list id) :showing-list true)
+       :db (assoc db :todos (:todos (get (:todo-lists local-store) id)))})))
 
 (reg-event-fx
   :go-to-dashboard
   (fn []
-    {:set-current-list nil}))
+    (dispatch [:set-current-list nil])))
 
 (reg-fx
   :add-list-to-user
@@ -257,20 +260,20 @@
   (fn [id]
     (let [curr-ls (get-ls-db)]
       (set-ls (update-in curr-ls
-                        [:todo-lists id :users]
-                        #(conj % (:current-user curr-ls)))))))
+                         [:todo-lists id :users]
+                         #(conj % (:current-user curr-ls)))))))
 
 (reg-event-fx
   :sub-to-todo-list
   [(inject-cofx :local-store)]
-  (fn [{:keys [local-store]} [_ id]]
+  (fn [{:keys [db local-store]} [_ id]]
     (let [todo-list (get (:todo-lists local-store) id)]
       (if todo-list
         (if (some #(= % id) (:subscriptions (get (:users local-store) (:current-user local-store))))
           (js/alert (str "You are already subscribed to the Todo List: " (:title todo-list)))
-          {:add-list-to-user id
-           :add-user-to-list id
-           :set-current-list id})
+          (do (dispatch [:set-current-list id])
+              {:add-list-to-user id
+               :add-user-to-list id}))
         (do (js/alert "Code is invalid."
                       {}))))))
 
@@ -278,7 +281,6 @@
   :new-list
   (fn [{:keys [title id]}]
     (new-list->local-store title id)))
-
 
 (reg-event-fx
   :create-todo-list
@@ -355,3 +357,9 @@
   (fn []
     (let [curr-ls (get-ls-db)]
       (:todo-lists curr-ls))))
+
+(reg-sub
+  :current-list
+  (fn []
+    (let [curr-ls (get-ls-db)]
+      (:title (get (:todo-lists curr-ls) (:current-list curr-ls))))))

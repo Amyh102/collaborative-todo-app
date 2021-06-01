@@ -1,614 +1,74 @@
-2021-05-31 10:16:15,525 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 10:16:15,741 [main] ERROR collaborative-todo-app.core - Database configuration not found, :database-url environment variable must be set before running 
-2021-05-31 11:23:20,829 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 11:24:34,091 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 11:24:34,338 [main] ERROR collaborative-todo-app.core - Database configuration not found, :database-url environment variable must be set before running 
-2021-05-31 11:25:48,161 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 11:25:48,542 [main] INFO  collaborative-todo-app.env - 
+2021-06-01 00:28:26,158 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 00:54:41,826 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 01:37:00,260 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 02:16:11,635 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 03:08:29,874 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 03:24:10,612 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 04:16:22,966 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 05:00:17,375 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 05:42:02,746 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 06:24:21,168 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 07:07:53,364 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 07:49:49,030 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 08:31:05,308 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 09:13:40,414 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 09:23:51,816 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 09:23:54,242 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 09:28:17,997 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 09:28:40,298 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 09:53:39,746 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:07:03,166 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:13:13,905 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:14:59,689 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:15:33,515 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:16:00,516 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:36,422 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:39,867 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:46,234 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:47,007 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:47,508 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:47,769 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:47,986 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:48,167 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:17:54,998 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
+2021-06-01 10:18:10,032 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-06-01 10:18:14,413 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-06-01 10:18:14,970 [main] INFO  collaborative-todo-app.env - 
 -=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 11:25:48,711 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 11:25:48,729 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 11:25:48,734 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 11:25:48,786 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 11:25:48,790 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 11:25:48,807 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 11:25:48,808 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 11:25:48,813 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 11:26:29,659 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
-2021-05-31 11:26:29,661 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
-2021-05-31 11:26:29,662 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 11:26:29,669 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
-2021-05-31 11:26:29,669 [Thread-3] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app has shut down successfully]=- 
-2021-05-31 11:26:29,672 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
-2021-05-31 11:26:29,673 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
-2021-05-31 11:26:29,673 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
-2021-05-31 11:26:29,673 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
-2021-05-31 11:26:38,402 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 11:26:42,731 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 11:26:42,735 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 11:26:42,783 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 11:26:42,794 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
-2021-05-31 11:46:51,666 [Thread-4] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 11:47:57,140 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 11:48:00,710 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 11:48:00,716 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 11:48:00,763 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 11:48:00,769 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
-2021-05-31 11:50:07,927 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 11:50:17,461 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 11:50:17,783 [main] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 11:50:18,023 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 11:50:18,038 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 11:50:18,042 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 11:50:18,090 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 11:50:18,095 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 11:50:18,112 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 11:50:18,113 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 11:50:18,119 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 11:52:20,562 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 11:52:58,752 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 11:53:02,174 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 11:53:02,178 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 11:53:02,227 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 11:53:02,232 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
-2021-05-31 11:53:23,598 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 11:54:31,140 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 11:54:33,199 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:04:23,068 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:08:40,499 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:08:50,549 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:19:22,127 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:19:27,326 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:20:09,098 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:20:11,230 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:20:17,753 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:20:29,706 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
-2021-05-31 12:20:29,714 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
-2021-05-31 12:20:29,717 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 12:20:29,723 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
-2021-05-31 12:20:29,724 [Thread-3] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app has shut down successfully]=- 
-2021-05-31 12:20:29,729 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
-2021-05-31 12:20:29,729 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
-2021-05-31 12:20:29,729 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
-2021-05-31 12:20:29,729 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
-2021-05-31 12:20:34,235 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 12:20:55,486 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 12:20:55,829 [main] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 12:20:56,043 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 12:20:56,067 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 12:20:56,071 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 12:20:56,144 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 12:20:56,150 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 12:20:56,172 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 12:20:56,172 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 12:20:56,180 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 12:20:56,181 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 12:20:56,181 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 12:20:56,181 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 12:20:56,181 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 12:21:00,216 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 12:21:03,746 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 12:21:03,750 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 12:21:03,800 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 12:21:03,805 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
-2021-05-31 12:21:57,035 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:22:17,475 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:23:39,795 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:27:17,406 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:28:23,040 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
-2021-05-31 12:28:23,042 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
-2021-05-31 12:28:23,044 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 12:28:23,048 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
-2021-05-31 12:28:23,049 [Thread-3] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app has shut down successfully]=- 
-2021-05-31 12:28:23,055 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
-2021-05-31 12:28:23,056 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
-2021-05-31 12:28:23,056 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
-2021-05-31 12:28:23,056 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
-2021-05-31 12:28:30,902 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 12:28:31,213 [main] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 12:28:31,433 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 12:28:31,449 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 12:28:31,453 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 12:28:31,499 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 12:28:31,504 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 12:28:31,521 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 12:28:31,522 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 12:28:31,527 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 12:34:32,386 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:34:36,431 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
-2021-05-31 12:34:36,432 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
-2021-05-31 12:34:36,433 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 12:34:36,435 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 12:34:36,435 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
-2021-05-31 12:34:36,436 [Thread-3] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app has shut down successfully]=- 
-2021-05-31 12:34:36,439 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
-2021-05-31 12:34:36,439 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
-2021-05-31 12:34:36,439 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
-2021-05-31 12:34:36,439 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
-2021-05-31 12:35:08,057 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 12:35:08,715 [main] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 12:35:09,166 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 12:35:09,186 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 12:35:09,190 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 12:35:09,251 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 12:35:09,257 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 12:35:09,278 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 12:35:09,278 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 12:35:09,288 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 12:35:18,781 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 12:35:22,676 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 12:35:22,680 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 12:35:22,736 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 12:35:22,741 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
-2021-05-31 12:35:27,616 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:35:32,705 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 12:38:48,319 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
-2021-05-31 12:38:48,321 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
-2021-05-31 12:38:48,322 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 12:38:48,323 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
-2021-05-31 12:38:48,323 [Thread-3] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app has shut down successfully]=- 
-2021-05-31 12:38:48,325 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
-2021-05-31 12:38:48,326 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
-2021-05-31 12:38:48,326 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
-2021-05-31 12:38:48,326 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
-2021-05-31 12:38:54,843 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 12:54:40,394 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 12:54:41,751 [main] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization. 
-org.postgresql.util.PSQLException: FATAL: database "test" does not exist
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2665) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:147) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:273) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.Driver.makeConnection(Driver.java:465) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.Driver.connect(Driver.java:264) ~[postgresql-42.2.18.jar:42.2.18]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81) ~[HikariCP-3.4.5.jar:na]
-	at hikari_cp.core$make_datasource.invokeStatic(core.clj:268) ~[na:na]
-	at hikari_cp.core$make_datasource.invoke(core.clj:265) ~[na:na]
-	at conman.core$connect_BANG_.invokeStatic(core.clj:162) ~[na:na]
-	at conman.core$connect_BANG_.invoke(core.clj:158) ~[na:na]
-	at collaborative_todo_app.db.core$eval15371$fn__15372.invoke(core.clj:15) ~[na:na]
-	at mount.core$record_BANG_.invokeStatic(core.cljc:74) ~[na:na]
-	at mount.core$record_BANG_.invoke(core.cljc:73) ~[na:na]
-	at mount.core$up$fn__441.invoke(core.cljc:81) ~[na:na]
-	at mount.core$up.invokeStatic(core.cljc:80) ~[na:na]
-	at mount.core$up.invoke(core.cljc:78) ~[na:na]
-	at mount.core$bring.invokeStatic(core.cljc:247) ~[na:na]
-	at mount.core$bring.invoke(core.cljc:239) ~[na:na]
-	at mount.core$start.invokeStatic(core.cljc:289) ~[na:na]
-	at mount.core$start.doInvoke(core.cljc:281) ~[na:na]
-	at clojure.lang.RestFn.invoke(RestFn.java:397) ~[clojure-1.10.3.jar:na]
-	at mount.core$start_with_args.invokeStatic(core.cljc:389) ~[na:na]
-	at mount.core$start_with_args.doInvoke(core.cljc:385) ~[na:na]
-	at clojure.lang.RestFn.invoke(RestFn.java:410) ~[clojure-1.10.3.jar:na]
-	at collaborative_todo_app.core$start_app.invokeStatic(core.clj:52) ~[na:na]
-	at collaborative_todo_app.core$start_app.invoke(core.clj:51) ~[na:na]
-	at collaborative_todo_app.core$_main.invokeStatic(core.clj:77) ~[na:na]
-	at collaborative_todo_app.core$_main.doInvoke(core.clj:59) ~[na:na]
-	at clojure.lang.RestFn.invoke(RestFn.java:397) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Var.invoke(Var.java:380) ~[clojure-1.10.3.jar:na]
-	at user$eval20430.invokeStatic(form-init7702750015765963099.clj:1) ~[na:na]
-	at user$eval20430.invoke(form-init7702750015765963099.clj:1) ~[na:na]
-	at clojure.lang.Compiler.eval(Compiler.java:7181) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Compiler.eval(Compiler.java:7171) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Compiler.load(Compiler.java:7640) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Compiler.loadFile(Compiler.java:7578) ~[clojure-1.10.3.jar:na]
-	at clojure.main$load_script.invokeStatic(main.clj:475) ~[clojure-1.10.3.jar:na]
-	at clojure.main$init_opt.invokeStatic(main.clj:477) ~[clojure-1.10.3.jar:na]
-	at clojure.main$init_opt.invoke(main.clj:477) ~[clojure-1.10.3.jar:na]
-	at clojure.main$initialize.invokeStatic(main.clj:508) ~[clojure-1.10.3.jar:na]
-	at clojure.main$null_opt.invokeStatic(main.clj:542) ~[clojure-1.10.3.jar:na]
-	at clojure.main$null_opt.invoke(main.clj:539) ~[clojure-1.10.3.jar:na]
-	at clojure.main$main.invokeStatic(main.clj:664) ~[clojure-1.10.3.jar:na]
-	at clojure.main$main.doInvoke(main.clj:616) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.RestFn.applyTo(RestFn.java:137) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Var.applyTo(Var.java:705) ~[clojure-1.10.3.jar:na]
-	at clojure.main.main(main.java:40) ~[clojure-1.10.3.jar:na]
-2021-05-31 12:54:45,824 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 12:54:49,600 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 12:54:49,605 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 12:54:49,673 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 12:54:49,683 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
-2021-05-31 13:00:50,765 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 13:00:51,057 [main] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 13:00:51,219 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 13:00:51,233 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 13:00:51,237 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 13:00:51,278 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 13:00:51,284 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 13:00:51,301 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 13:00:51,301 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 13:00:51,306 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 13:03:21,886 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 13:03:51,884 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
-2021-05-31 13:03:51,885 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
-2021-05-31 13:03:51,887 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 13:03:51,889 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
-2021-05-31 13:03:51,889 [Thread-3] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app has shut down successfully]=- 
-2021-05-31 13:03:51,894 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
-2021-05-31 13:03:51,894 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
-2021-05-31 13:03:51,894 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
-2021-05-31 13:03:51,895 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
-2021-05-31 13:04:34,548 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 13:04:34,901 [main] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 13:04:35,095 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 13:04:35,111 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 13:04:35,115 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 13:04:35,162 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 13:04:35,167 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 13:04:35,184 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 13:04:35,184 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 13:04:35,190 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 13:07:22,166 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
-2021-05-31 13:07:22,167 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
-2021-05-31 13:07:22,169 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 13:07:22,171 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
-2021-05-31 13:07:22,172 [Thread-3] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app has shut down successfully]=- 
-2021-05-31 13:07:22,176 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
-2021-05-31 13:07:22,176 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
-2021-05-31 13:07:22,176 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
-2021-05-31 13:07:22,176 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
-2021-05-31 13:09:08,405 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 13:09:08,638 [main] INFO  migratus.core - Starting migrations 
-2021-05-31 13:09:08,706 [main] INFO  migratus.database - creating migration table 'schema_migrations' 
-2021-05-31 13:09:08,741 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0x1325b6a6 /Users/parthmodi/Documents/Projects/collaborative-todo-app/resources/migrations] 
-2021-05-31 13:09:08,746 [main] INFO  migratus.core - Running up for [20210531100723] 
-2021-05-31 13:09:08,746 [main] INFO  migratus.core - Up 20210531100723-add-users-table 
-2021-05-31 13:09:08,752 [main] DEBUG migratus.migration.sql - found 1 up migrations 
-2021-05-31 13:09:08,764 [main] ERROR migratus.migration.sql - failed to execute command:
- CREATE TABLE users (
-	username VARCHAR ( 50 ) UNIQUE NOT NULL,
-	password VARCHAR ( 50 ) NOT NULL,
-subscriptions integer[]
-);
-
-CREATE TABLE tasks (
-list_id serial PRIMARY KEY,
-title  VARCHAR NOT NULL,
-list_of_todos jsonb,
-subscribed_users integer[]
-);
- 
-2021-05-31 13:09:08,764 [main] ERROR migratus.migration.sql - Too many update results were returned. 
-2021-05-31 13:09:08,764 [main] ERROR migratus.database - Migration add-users-table failed because Batch entry 1 <unknown> was aborted: Too many update results were returned.  Call getNextException to see other errors in the batch. backing out 
-2021-05-31 13:09:08,764 [main] DEBUG migratus.migration.sql - found 1 down migrations 
-2021-05-31 13:09:08,771 [main] INFO  migratus.core - Ending migrations 
-2021-05-31 13:15:45,617 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 13:15:45,826 [main] INFO  migratus.core - Starting migrations 
-2021-05-31 13:15:45,884 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0xf979195 /Users/parthmodi/Documents/Projects/collaborative-todo-app/resources/migrations] 
-2021-05-31 13:15:45,888 [main] INFO  migratus.core - Running up for [20210531100723] 
-2021-05-31 13:15:45,888 [main] INFO  migratus.core - Up 20210531100723-add-users-table 
-2021-05-31 13:15:45,892 [main] DEBUG migratus.migration.sql - found 1 up migrations 
-2021-05-31 13:15:45,940 [main] ERROR migratus.migration.sql - failed to execute command:
- DO $$BEGIN
-CREATE TABLE users (
-username VARCHAR ( 50 ) UNIQUE NOT NULL,
-password VARCHAR ( 50 ) NOT NULL,
-subscriptions integer[]
-)
-
-CREATE TABLE tasks (
-list_id serial PRIMARY KEY,
-title  VARCHAR NOT NULL,
-list_of_todos jsonb,
-subscribed_users integer[]
-)
-END$$;
- 
-2021-05-31 13:15:45,940 [main] ERROR migratus.migration.sql - ERROR: unexpected end of function definition at end of input
-  Position: 262 
-2021-05-31 13:15:45,940 [main] ERROR migratus.database - Migration add-users-table failed because Batch entry 0 DO $$BEGIN
-CREATE TABLE users (
-username VARCHAR ( 50 ) UNIQUE NOT NULL,
-password VARCHAR ( 50 ) NOT NULL,
-subscriptions integer[]
-)
-
-CREATE TABLE tasks (
-list_id serial PRIMARY KEY,
-title  VARCHAR NOT NULL,
-list_of_todos jsonb,
-subscribed_users integer[]
-)
-END$$ was aborted: ERROR: unexpected end of function definition at end of input
-  Position: 262  Call getNextException to see other errors in the batch. backing out 
-2021-05-31 13:15:45,941 [main] DEBUG migratus.migration.sql - found 1 down migrations 
-2021-05-31 13:15:45,941 [main] ERROR migratus.migration.sql - failed to execute command:
- DROP TABLE users;
- 
-2021-05-31 13:15:45,941 [main] ERROR migratus.migration.sql - ERROR: current transaction is aborted, commands ignored until end of transaction block 
-2021-05-31 13:15:45,946 [main] DEBUG migratus.database - As expected, one of the statements failed in add-users-table while backing out the migration 
-java.sql.BatchUpdateException: Batch entry 0 DROP TABLE users was aborted: ERROR: current transaction is aborted, commands ignored until end of transaction block  Call getNextException to see other errors in the batch.
-	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:169) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2286) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:521) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:870) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:893) ~[postgresql-42.2.18.jar:42.2.18]
-	at clojure.java.jdbc$execute_batch.invokeStatic(jdbc.clj:598) ~[na:na]
-	at clojure.java.jdbc$execute_batch.invoke(jdbc.clj:591) ~[na:na]
-	at clojure.java.jdbc$db_do_commands$fn__14518.invoke(jdbc.clj:958) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:860) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at clojure.java.jdbc$db_do_commands.invokeStatic(jdbc.clj:957) ~[na:na]
-	at clojure.java.jdbc$db_do_commands.invoke(jdbc.clj:942) ~[na:na]
-	at clojure.java.jdbc$db_do_commands.invokeStatic(jdbc.clj:951) ~[na:na]
-	at clojure.java.jdbc$db_do_commands.invoke(jdbc.clj:942) ~[na:na]
-	at migratus.migration.sql$execute_command$fn__19371.invoke(sql.clj:63) ~[na:na]
-	at migratus.migration.sql$execute_command.invokeStatic(sql.clj:62) ~[na:na]
-	at migratus.migration.sql$execute_command.invoke(sql.clj:59) ~[na:na]
-	at migratus.migration.sql$run_sql_STAR_.invokeStatic(sql.clj:80) ~[na:na]
-	at migratus.migration.sql$run_sql_STAR_.invoke(sql.clj:76) ~[na:na]
-	at migratus.migration.sql$run_sql$fn__19389.invoke(sql.clj:88) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:860) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at migratus.migration.sql$run_sql.invokeStatic(sql.clj:86) ~[na:na]
-	at migratus.migration.sql$run_sql.invoke(sql.clj:82) ~[na:na]
-	at migratus.migration.sql.SqlMigration.down(sql.clj:109) ~[na:na]
-	at migratus.database$migrate_up_STAR_$fn__19627.invoke(database.clj:71) ~[na:na]
-	at migratus.database$migrate_up_STAR_.invokeStatic(database.clj:70) ~[na:na]
-	at migratus.database$migrate_up_STAR_.invoke(database.clj:56) ~[na:na]
-	at migratus.database.Database$fn__19697.invoke(database.clj:262) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:807) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at migratus.database.Database.migrate_up(database.clj:261) ~[na:na]
-	at migratus.core$up_STAR_.invokeStatic(core.clj:79) ~[na:na]
-	at migratus.core$up_STAR_.invoke(core.clj:77) ~[na:na]
-	at migratus.core$migrate_up_STAR_.invokeStatic(core.clj:90) ~[na:na]
-	at migratus.core$migrate_up_STAR_.invoke(core.clj:81) ~[na:na]
-	at migratus.core$migrate_STAR_.invokeStatic(core.clj:103) ~[na:na]
-	at migratus.core$migrate_STAR_.invoke(core.clj:99) ~[na:na]
-	at clojure.core$partial$fn__5857.invoke(core.clj:2629) ~[clojure-1.10.3.jar:na]
-	at migratus.core$run.invokeStatic(core.clj:53) ~[na:na]
-	at migratus.core$run.invoke(core.clj:49) ~[na:na]
-	at migratus.core$migrate.invokeStatic(core.clj:110) ~[na:na]
-	at migratus.core$migrate.invoke(core.clj:105) ~[na:na]
-	at luminus_migrations.core$fn__19848.invokeStatic(core.clj:44) ~[na:na]
-	at luminus_migrations.core$fn__19848.invoke(core.clj:41) ~[na:na]
-	at luminus_migrations.core$migrate.invokeStatic(core.clj:98) ~[na:na]
-	at luminus_migrations.core$migrate.invoke(core.clj:84) ~[na:na]
-	at collaborative_todo_app.core$_main.invokeStatic(core.clj:74) ~[na:na]
-	at collaborative_todo_app.core$_main.doInvoke(core.clj:59) ~[na:na]
-	at clojure.lang.RestFn.invoke(RestFn.java:408) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Var.invoke(Var.java:384) ~[clojure-1.10.3.jar:na]
-	at user$eval20430.invokeStatic(form-init10101103146431037307.clj:1) ~[na:na]
-	at user$eval20430.invoke(form-init10101103146431037307.clj:1) ~[na:na]
-	at clojure.lang.Compiler.eval(Compiler.java:7181) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Compiler.eval(Compiler.java:7171) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Compiler.load(Compiler.java:7640) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Compiler.loadFile(Compiler.java:7578) ~[clojure-1.10.3.jar:na]
-	at clojure.main$load_script.invokeStatic(main.clj:475) ~[clojure-1.10.3.jar:na]
-	at clojure.main$init_opt.invokeStatic(main.clj:477) ~[clojure-1.10.3.jar:na]
-	at clojure.main$init_opt.invoke(main.clj:477) ~[clojure-1.10.3.jar:na]
-	at clojure.main$initialize.invokeStatic(main.clj:508) ~[clojure-1.10.3.jar:na]
-	at clojure.main$null_opt.invokeStatic(main.clj:542) ~[clojure-1.10.3.jar:na]
-	at clojure.main$null_opt.invoke(main.clj:539) ~[clojure-1.10.3.jar:na]
-	at clojure.main$main.invokeStatic(main.clj:664) ~[clojure-1.10.3.jar:na]
-	at clojure.main$main.doInvoke(main.clj:616) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.RestFn.applyTo(RestFn.java:137) ~[clojure-1.10.3.jar:na]
-	at clojure.lang.Var.applyTo(Var.java:705) ~[clojure-1.10.3.jar:na]
-	at clojure.main.main(main.java:40) ~[clojure-1.10.3.jar:na]
-Caused by: org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285) ~[postgresql-42.2.18.jar:42.2.18]
-	... 72 common frames omitted
-Caused by: org.postgresql.util.PSQLException: ERROR: unexpected end of function definition at end of input
-  Position: 262
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:521) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:870) ~[postgresql-42.2.18.jar:42.2.18]
-	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:893) ~[postgresql-42.2.18.jar:42.2.18]
-	at clojure.java.jdbc$execute_batch.invokeStatic(jdbc.clj:598) ~[na:na]
-	at clojure.java.jdbc$execute_batch.invoke(jdbc.clj:591) ~[na:na]
-	at clojure.java.jdbc$db_do_commands$fn__14518.invoke(jdbc.clj:958) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:860) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at clojure.java.jdbc$db_do_commands.invokeStatic(jdbc.clj:957) ~[na:na]
-	at clojure.java.jdbc$db_do_commands.invoke(jdbc.clj:942) ~[na:na]
-	at clojure.java.jdbc$db_do_commands.invokeStatic(jdbc.clj:951) ~[na:na]
-	at clojure.java.jdbc$db_do_commands.invoke(jdbc.clj:942) ~[na:na]
-	at migratus.migration.sql$execute_command$fn__19371.invoke(sql.clj:63) ~[na:na]
-	at migratus.migration.sql$execute_command.invokeStatic(sql.clj:62) ~[na:na]
-	at migratus.migration.sql$execute_command.invoke(sql.clj:59) ~[na:na]
-	at migratus.migration.sql$run_sql_STAR_.invokeStatic(sql.clj:80) ~[na:na]
-	at migratus.migration.sql$run_sql_STAR_.invoke(sql.clj:76) ~[na:na]
-	at migratus.migration.sql$run_sql$fn__19389.invoke(sql.clj:88) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:860) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invokeStatic(jdbc.clj:789) ~[na:na]
-	at clojure.java.jdbc$db_transaction_STAR_.invoke(jdbc.clj:776) ~[na:na]
-	at migratus.migration.sql$run_sql.invokeStatic(sql.clj:86) ~[na:na]
-	at migratus.migration.sql$run_sql.invoke(sql.clj:82) ~[na:na]
-	at migratus.migration.sql.SqlMigration.up(sql.clj:105) ~[na:na]
-	at migratus.database$migrate_up_STAR_.invokeStatic(database.clj:62) ~[na:na]
-	... 43 common frames omitted
-2021-05-31 13:15:45,948 [main] INFO  migratus.core - Ending migrations 
-2021-05-31 13:18:48,563 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 13:18:48,776 [main] INFO  migratus.core - Starting migrations 
-2021-05-31 13:18:48,835 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0xf979195 /Users/parthmodi/Documents/Projects/collaborative-todo-app/resources/migrations] 
-2021-05-31 13:18:48,839 [main] INFO  migratus.core - Running up for [20210531100723] 
-2021-05-31 13:18:48,839 [main] INFO  migratus.core - Up 20210531100723-add-users-table 
-2021-05-31 13:18:48,844 [main] DEBUG migratus.migration.sql - found 1 up migrations 
-2021-05-31 13:18:48,864 [main] DEBUG migratus.database - marking 20210531100723 complete 
-2021-05-31 13:18:48,868 [main] INFO  migratus.core - Ending migrations 
-2021-05-31 14:00:46,237 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 14:00:46,521 [main] INFO  migratus.core - Starting migrations 
-2021-05-31 14:00:46,647 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0x58d4ee83 /Users/ethanlunwang/Documents/GitHub/collaborative-todo-app/resources/migrations] 
-2021-05-31 14:00:46,650 [main] INFO  migratus.core - Ending migrations 
-2021-05-31 14:02:03,960 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 14:02:04,217 [main] INFO  migratus.core - Starting migrations 
-2021-05-31 14:02:04,336 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0x2b9f0fee /Users/ethanlunwang/Documents/GitHub/collaborative-todo-app/resources/migrations] 
-2021-05-31 14:02:04,339 [main] INFO  migratus.core - Ending migrations 
-2021-05-31 14:03:08,631 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 14:03:08,893 [main] INFO  migratus.core - Starting migrations 
-2021-05-31 14:03:09,016 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0x58d4ee83 /Users/ethanlunwang/Documents/GitHub/collaborative-todo-app/resources/migrations] 
-2021-05-31 14:03:09,017 [main] INFO  migratus.core - Ending migrations 
-2021-05-31 14:03:24,999 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 14:03:25,231 [main] INFO  migratus.core - Starting migrations 
-2021-05-31 14:03:25,352 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0x1e441f46 /Users/ethanlunwang/Documents/GitHub/collaborative-todo-app/resources/migrations] 
-2021-05-31 14:03:25,362 [main] INFO  migratus.core - Running down for [20210531100723] 
-2021-05-31 14:03:25,362 [main] INFO  migratus.core - Down 20210531100723-add-users-table 
-2021-05-31 14:03:25,368 [main] DEBUG migratus.migration.sql - found 1 down migrations 
-2021-05-31 14:03:25,807 [main] ERROR migratus.migration.sql - failed to execute command:
- DO
-$$
-BEGIN
-DROP TABLE [IF EXISTS] users;
-DROP TABLE [IF EXISTS] tasks;
-END
-$$; 
-2021-05-31 14:03:25,808 [main] ERROR migratus.migration.sql - ERROR: syntax error at or near "["
-  Position: 24 
-2021-05-31 14:03:25,811 [main] INFO  migratus.core - Ending migrations 
-2021-05-31 14:03:55,041 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 14:03:55,285 [main] INFO  migratus.core - Starting migrations 
-2021-05-31 14:03:55,396 [main] DEBUG migratus.migrations - Looking for migrations in #object[java.io.File 0x58d4ee83 /Users/ethanlunwang/Documents/GitHub/collaborative-todo-app/resources/migrations] 
-2021-05-31 14:03:55,398 [main] INFO  migratus.core - Ending migrations 
-2021-05-31 14:33:07,933 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 14:33:08,462 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 14:33:08,885 [main] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 14:33:09,075 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 14:33:09,094 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 14:33:09,100 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 14:33:09,164 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 14:33:09,171 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 14:33:09,193 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 14:33:09,194 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 14:33:09,200 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 14:33:09,200 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 14:33:09,200 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 14:33:09,201 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 14:33:09,201 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 14:33:11,915 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 14:33:11,918 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 14:33:11,960 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 14:33:11,964 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
-2021-05-31 14:33:25,615 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 14:51:01,900 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 14:51:09,073 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m30s10ms). 
-2021-05-31 14:57:49,078 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:04:58,441 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:05:12,459 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m33s341ms). 
-2021-05-31 15:24:28,340 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:24:30,350 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:25:09,767 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:25:11,299 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:25:14,198 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:25:14,779 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:26:14,330 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:26:15,178 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:26:15,550 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:26:15,720 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:26:15,864 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:26:21,004 [Thread-3] INFO  collaborative-todo-app.nrepl - nREPL server stopped 
-2021-05-31 15:26:21,005 [Thread-3] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:-1645144552, ignoring options. 
-2021-05-31 15:26:21,005 [Thread-3] INFO  io.undertow - stopping server: Undertow - 2.2.4.Final 
-2021-05-31 15:26:21,006 [Thread-3] INFO  luminus.http-server - HTTP server stopped 
-2021-05-31 15:26:21,007 [Thread-3] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app has shut down successfully]=- 
-2021-05-31 15:26:21,009 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server stopped 
-2021-05-31 15:26:21,010 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server stopped 
-2021-05-31 15:26:21,010 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app stopped 
-2021-05-31 15:26:21,010 [Thread-3] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* stopped 
-2021-05-31 15:26:28,952 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
-2021-05-31 15:26:29,280 [main] INFO  collaborative-todo-app.env - 
--=[collaborative-todo-app started successfully using the development profile]=- 
-2021-05-31 15:26:29,468 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
-2021-05-31 15:26:29,482 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
-2021-05-31 15:26:29,486 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
-2021-05-31 15:26:29,534 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
-2021-05-31 15:26:29,539 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
-2021-05-31 15:26:29,558 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
-2021-05-31 15:26:29,559 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
-2021-05-31 15:26:29,564 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
-2021-05-31 15:26:29,564 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
-2021-05-31 15:26:29,564 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
-2021-05-31 15:26:29,564 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
-2021-05-31 15:26:29,564 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
-2021-05-31 15:26:30,863 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:26:40,582 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:27:41,248 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:34:59,339 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:45:18,670 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:46:03,615 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:59:14,824 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:59:14,939 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 15:59:22,918 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m23s332ms). 
-2021-05-31 16:04:27,771 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 16:04:35,358 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m12s392ms). 
-2021-05-31 17:16:20,092 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 17:17:19,927 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 17:21:18,081 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 17:23:15,341 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 17:23:27,988 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 17:43:07,002 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 17:51:34,944 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:24:21,639 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:43:01,186 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:44:37,276 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:48:56,263 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:52:18,639 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:56:55,641 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:58:37,787 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:58:41,798 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 18:58:47,425 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 19:01:40,070 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 19:06:44,939 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 19:10:01,725 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 19:10:23,492 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 19:27:47,197 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
-2021-05-31 19:27:51,900 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m15s272ms). 
-2021-05-31 19:42:14,012 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:18:15,199 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2021-06-01 10:18:15,218 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-06-01 10:18:15,221 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-06-01 10:18:15,235 [main] INFO  io.undertow - starting server: Undertow - 2.2.4.Final 
+2021-06-01 10:18:15,240 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-06-01 10:18:15,281 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-06-01 10:18:15,291 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-06-01 10:18:15,318 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2021-06-01 10:18:15,318 [main] INFO  collaborative-todo-app.nrepl - starting nREPL server on port 7000 
+2021-06-01 10:18:15,322 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-06-01 10:18:15,331 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.db.core/*db* started 
+2021-06-01 10:18:15,332 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 9630 
+2021-06-01 10:18:15,332 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/init-app started 
+2021-06-01 10:18:15,334 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.handler/app-routes started 
+2021-06-01 10:18:15,334 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/http-server started 
+2021-06-01 10:18:15,334 [main] INFO  collaborative-todo-app.core - #'collaborative-todo-app.core/repl-server started 
+2021-06-01 10:18:31,607 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:25:50,747 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:25:52,830 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:25:53,809 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:25:57,740 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:26:02,079 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:26:50,282 [XNIO-1 I/O-1] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:36:35,325 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:38:57,851 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:39:15,266 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 10:39:47,872 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:02:57,469 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:03:11,462 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:03:22,028 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:10:36,128 [XNIO-1 I/O-7] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:25:32,327 [XNIO-1 I/O-4] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:36:38,860 [XNIO-1 I/O-3] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:39:30,224 [XNIO-1 I/O-2] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:40:17,725 [XNIO-1 I/O-8] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:42:47,485 [XNIO-1 I/O-5] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
+2021-06-01 11:44:42,313 [XNIO-1 I/O-6] DEBUG i.undertow.websockets.core.extension - Negotiated extension WebSocketExtension{name='permessage-deflate', parameters=[]} for handshake WebSocketExtension{name='permessage-deflate', parameters=[{'client_max_window_bits': 'null'}]} 
