@@ -132,33 +132,37 @@
            :value     @atom-value
            :on-change (fn [x] (reset! atom-value (.. x -target -value)))}])
 
-(defn dashboard
-  [display-dash]
+(defn dashboard [display-dash]
   (let [todo-list-id (reagent/atom "")
         new-list-title (reagent/atom "")
         subbed-lists @(subscribe [:subbed-lists])
-        all-todo-lists @(subscribe [:all-todo-lists])]
+        all-todo-lists @(subscribe [:all-todo-lists])
+        code-focused? (reagent/atom false)
+        list-focused? (reagent/atom false)]
     [:div
      [:button#logout_button {:on-click #(dispatch [:logout nil])} "Log Out"]
      [:h1 "My Todo Lists"]
-     "Have a code for an existing Todo list?"
+     [:p#dashboard-header "Have a code for an existing Todo list?"]
      [:br]
-     [:input {:type        "text"
+     [:input#dashboard-input {:type        "text"
               :placeholder "Enter code here"
-              :on-change   #(reset! todo-list-id (-> % .-target .-value))}]
-     [:input {:type     "button"
-              :value    "Add"
-              :on-click #(dispatch [:sub-to-todo-list (int @todo-list-id)])}]
+              :on-focus  #(do (println "code focused") (reset! code-focused? true))
+              :on-blur   #(do (println "code blurred")(reset! code-focused? false))
+              :on-change   #(reset! todo-list-id (-> % .-target .-value))
+              :on-key-press #(if (and (= 13 (-> % .-charCode)) @code-focused?)
+                              ((reset! display-dash false)
+                                  (dispatch [:sub-to-todo-list (int @todo-list-id)])))}]
      [:br] [:br]
-     "Create a new Todo list:"
+     [:p#dashboard-header "Create a new Todo list:"]
      [:br]
-     [:input {:type        "text"
+     [:input#dashboard-input {:type        "text"
               :placeholder "Enter a title here"
-              :on-change   #(reset! new-list-title (-> % .-target .-value))}]
-     [:input {:type     "button"
-              :value    "Create"
-              :on-click #((reset! display-dash false)
-                          (dispatch [:create-todo-list @new-list-title]))}]
+              :on-focus  #(reset! list-focused? true)
+              :on-blur   #(reset! list-focused? false)
+              :on-change   #(reset! new-list-title (-> % .-target .-value))
+              :on-key-press #(if (and (= 13 (-> % .-charCode)) @list-focused?)
+                              ((reset! display-dash false)
+                                  (dispatch [:create-todo-list @new-list-title])))}]
      [:ul
       (for [id subbed-lists]
         ^{:key id} [:li
