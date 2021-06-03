@@ -18,7 +18,6 @@
    ["/users" {:get {:summary "get user info"
                     :parameters {:body-params {:username string?}}
                     :handler (fn [{{:keys [username]} :body-params :as req}]
-                               (println "This FIred")
                                {:status 200
                                 :body (db/get-user! {:username username})})}
               :post {:middleware [(fn [handler]
@@ -31,13 +30,10 @@
                      :summary "creates a user"
                      :parameters {:body-params {:username string? :password string?}}
                      :handler (fn [{{:keys [username password]} :body-params :as req}]
-                                (println username)
-                                (println password)
-                                (println req)
                                 (db/create-user! {:username username :password password})
                                 {:status 200
                                  :body "Created Successfully"})}}]
-   ["/auth" {:get {:middleware [(fn [handler]
+   ["/users/auth" {:get {:middleware [(fn [handler]
                                     (fn [{{:keys [username password]} :body-params :as req}]
                                       (let [user-info (db/get-user! {:username username})]
                                         (if (not user-info)
