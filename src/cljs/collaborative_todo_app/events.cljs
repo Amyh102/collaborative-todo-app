@@ -43,12 +43,11 @@
       curr-ls)))
 
 (defn user->local-store
-  [name username password]
+  [full_name username]
   (let [curr-ls (get-ls-db)]
     (set-ls (assoc-in curr-ls
                       [:users username]
-                      {:name          name
-                       :password      password
+                      {:full_name full_name
                        :subscriptions []}))))
 
 (defn new-list->local-store
@@ -128,36 +127,64 @@
     (login->local-store username)))
 
 (reg-event-fx
-  :login
-  [(inject-cofx :local-store)]
-  (fn [{:keys [db local-store]}
-       [_ {:keys [username password]}]]
-    (println local-store)
-    (println (:users local-store))
-    (if (contains? (:users local-store) username)
-      (if (= (get-in local-store [:users username :password]) password)
-        {:db         (assoc (assoc db :logged-in true) :auth-error nil)
-         :login-user username}
-        {:db (assoc db :auth-error "Incorrect Password")})
-      {:db (assoc db :auth-error "Username not found")})))
+ :login
+ (fn [{:keys [db]}
+      [_ data]]
+   {:http-xhrio {:method :get
+                 :uri "http://localhost:3000/users/auth"
+                 :params data
+                 :timeout 5000
+                 :format          (ajax/json-request-format)
+                 :response-format (ajax/json-response-format {:keywords? true})
+                 :on-success [::success-login-result data]
+                 :on-failure [::failure-login-result data]}}
+   ))
+
+(reg-event-fx
+ ::success-login-result
+ (fn [db [_ {:keys [username password]} {{:keys [response auth-error]} :response}]]
+   {:db (assoc (assoc db :logged-in true) :auth-error nil)
+    :login-user username}))
+
+(reg-event-db
+ ::failure-login-result
+ (fn [db [_ {:keys [username password]} {{:keys [response auth-error]} :response}]]
+   (assoc db :auth-error auth-error)))
 
 
 ;; Handles the SignIn Event
 
 (reg-fx
   :new-user
-  (fn [{:keys [name username password]}]
-    (user->local-store name username password)))
+  (fn [{:keys [full_name username password]}]
+    (user->local-store full_name username)))
 
 (reg-event-fx
-  :signIn
-  [(inject-cofx :local-store)]
-  (fn [{:keys [db local-store]}
-       [_ data]]
-    (if (contains? (:users local-store) (:username data))
-      {:db (assoc db :auth-error "Username Already Exists")}
-      {:db       (assoc db :auth-error nil)
-       :new-user data})))
+ :signIn
+ (fn [{:keys [db]}
+      [_ data]]
+   (println data)
+   {:http-xhrio {:method :post
+                 :uri "http://localhost:3000/users"
+                 :params data
+                 :timeout 5000
+                 :format          (ajax/json-request-format)
+                 :response-format (ajax/json-response-format {:keywords? true})
+                 :on-success [::success-signIn-result data]
+                 :on-failure [::failure-signIn-result data]}}))
+
+(reg-event-fx
+ ::success-signIn-result
+ (fn [db [_ {:keys [full_name username password] :as data} {{:keys [result]} :response} :as res]]
+   (println res)
+   {:db (assoc db :auth-error nil)
+    :new-user data}))
+
+(reg-event-db
+ ::failure-signIn-result
+ (fn [db [_ {:keys [full_name username password]} {{:keys [result]} :response} :as res]]
+   (println res)
+   (assoc db :auth-error result)))
 
 ;; Handles the LogOut Event
 
