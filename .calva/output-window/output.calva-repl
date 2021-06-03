@@ -1,0 +1,52 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Starting Jack-in Terminal: lein update-in :dependencies conj '[nrepl,"0.8.3"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.26.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS: 
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+
+; Evaluating 'afterCLJReplJackInCode'
+(in-ns 'user) (start) (println "Access the server at http://localhost:3000")
+Access the server at http://localhost:3000
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉user꞉> (db/get-user {:username "pmodi"})
+; Syntax error compiling at (.calva/output-window/output.calva-repl:26:12).
+; No such namespace: db
+clj꞉user꞉> (collaborative_todo_app.db.core/get-user {:username "pmodi"})
+; Execution error (ClassNotFoundException) at java.net.URLClassLoader/findClass (URLClassLoader.java:433).
+; collaborative_todo_app.db.core
+clj꞉user꞉> (collaborative-todo-app.db.core/get-user {:username "pmodi"})
+nil
+clj꞉user꞉> (collaborative-todo-app.db.core/create-user! {:username "pmodi"
+                                                         :password "admin"})
+1
+clj꞉user꞉> (collaborative-todo-app.db.core/get-user {:username "pmodi"})
+{:username "pmodi", :password "admin", :subscriptions nil}
+clj꞉user꞉> (collaborative-todo-app.db.core/create-user! {:username "luke"
+                                                         :password "admin"})
+1
+clj꞉user꞉> (collaborative-todo-app.db.core/get-user {:username "luke"})
+{:username "luke", :password "admin", :subscriptions nil}
+clj꞉user꞉> 
+exit
+; Syntax error compiling at (.calva/output-window/output.calva-repl:1:8036).
+; Unable to resolve symbol: exit in this context
+clj꞉user꞉> 
+exit()
+()
+clj꞉user꞉> 
+; nREPL Connection was closed

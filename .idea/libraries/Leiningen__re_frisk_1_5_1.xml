@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: re-frisk:1.5.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/re-frisk/re-frisk/1.5.1/re-frisk-1.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
