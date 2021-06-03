@@ -170,7 +170,7 @@
 (defn signIn
   [form]
   (let [auth-error @(subscribe [:auth-error])
-        name (reagent/atom nil)
+        full_name (reagent/atom nil)
         username (reagent/atom nil)
         password (reagent/atom nil)]
     [:div#signup
@@ -178,7 +178,7 @@
      [:form
       [:div.field-wrap
        [:label "Full Name"]
-       [input-element "name" "name" "text" name]]
+       [input-element "full_name" "full_name" "text" full_name]]
       [:div.field-wrap
        [:label "Username"]
        [input-element "username" "username" "text" username]]
@@ -188,9 +188,16 @@
      (when auth-error [:div#auth-error auth-error])
      [:div.buttons
       [:button {:class    "button button-block"
-                :on-click #((dispatch [:signIn {:name     @name
-                                                :username @username
-                                                :password @password}]))}
+                :on-click #((let [full_name_var @full_name
+                                  username_var @username
+                                  password_var @password]
+
+                              (dispatch [:signIn {:full_name full_name_var
+                                                  :username username_var
+                                                  :password password_var}])
+                              (reset! full_name "")
+                              (reset! username "")
+                              (reset! password "")))}
        "Get Started"]
       [:button {:class    "button button-block"
                 :on-click #((reset! form false)

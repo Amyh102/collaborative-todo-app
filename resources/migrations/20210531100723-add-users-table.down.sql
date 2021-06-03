@@ -1,7 +1,7 @@
 DO
 $$
     BEGIN
-        DROP TABLE [IF EXISTS] users;
-        DROP TABLE [IF EXISTS] tasks;
+        DROP TABLE users;
+        DROP TABLE tasks;
     END
 $$;

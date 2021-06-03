@@ -2,6 +2,7 @@ DO
 $$
     BEGIN
         CREATE TABLE users (
+            full_name VARCHAR ( 50 ) NOT NULL,
             username VARCHAR ( 50 ) UNIQUE NOT NULL,
             password VARCHAR ( 50 ) NOT NULL,
             subscriptions integer[]
