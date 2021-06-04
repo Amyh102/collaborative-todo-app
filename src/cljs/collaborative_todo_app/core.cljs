@@ -142,7 +142,7 @@
      [:h1 "My Todo Lists"]
      [:p#dashboard-header "Have a code for an existing Todo list?"]
      [:br]
-     [:input#dashboard-input {:type        "text"
+     [:input.dashboard-input {:type        "text"
               :placeholder "Enter code here"
               :on-change   #(reset! todo-list-id (-> % .-target .-value))
               :on-key-press #(if (= 13 (-> % .-charCode)) 
@@ -151,7 +151,7 @@
      [:br] [:br]
      [:p#dashboard-header "Create a new Todo list:"]
      [:br]
-     [:input#dashboard-input {:type        "text"
+     [:input.dashboard-input {:type        "text"
               :placeholder "Enter a title here"
               :on-change   #(reset! new-list-title (-> % .-target .-value))
               :on-key-press #(if (= 13 (-> % .-charCode)) 
