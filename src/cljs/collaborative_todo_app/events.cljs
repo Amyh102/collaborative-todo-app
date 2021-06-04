@@ -313,16 +313,27 @@
   :create-todo-list
   [(inject-cofx :local-store)]
   (fn [{:keys [db local-store]} [_ title]]
-    (let [id (allocate-next-id (:todo-lists local-store))]
-    (do 
-       (dispatch [:set-current-list id])
-      {:new-list         {:title title :id id}
-       :set-current-list id
-       :add-list-to-user id
-       :add-user-to-list id}
-       ))))
+    (println title)
+    {:http-xhrio {:method :post
+                  :uri "http://localhost:3000/todo-list"
+                  :params {:title title
+                           :list_of_todos {}
+                           :subscribed_users (vector (:current-user local-store))}
+                  :timeout 5000
+                  :format          (ajax/json-request-format)
+                  :response-format (ajax/json-response-format {:keywords? true})
+                  :on-success [::success-create-todo-list]
+                  :on-failure [::failure-create-todo-list]}}))
 
+(reg-event-fx
+  ::success-create-todo-list
+  (fn [db [_ res]]
+    (dispatch [:set-current-list (:list_id res)])))
 
+(reg-event-db
+  ::failure-create-todo-list
+  (fn [db [_ res]]
+    (js/alert res)))
 
 
 ;; Subscriptions
