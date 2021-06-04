@@ -14,6 +14,16 @@ WHERE username = :username
 DELETE FROM users
 WHERE username = :username
 
+-- :name get-list! :? :1
+-- :doc retrieves a todo list record given the id
+SELECT * FROM tasks
+WHERE list_id = :list_id
+
+-- :name get-max-id! :? :1
+-- :doc retrieves the maximum id in tasks. If empty returns 0
+SELECT COALESCE (MAX (list_id), 0)
+FROM tasks
+
 -- :name create-list! :! :n
 -- :doc creates a new todo list
 INSERT INTO tasks

@@ -294,15 +294,28 @@
   :sub-to-todo-list
   [(inject-cofx :local-store)]
   (fn [{:keys [db local-store]} [_ id]]
-    (let [todo-list (get (:todo-lists local-store) id)]
-      (if todo-list
-        (if (some #(= % id) (:subscriptions (get (:users local-store) (:current-user local-store))))
-          (js/alert (str "You are already subscribed to the Todo List: " (:title todo-list)))
-          (do (println "updated")
-              {:add-list-to-user id
-               :add-user-to-list id}))
-        (do (js/alert "Code is invalid."
-                      {}))))))
+    (println id)
+    {:http-xhrio {:method :put
+                  :uri "http://localhost:3000/users/subscriptions"
+                  :params {:username (:current-user local-store)
+                           :subscription id
+                           :add true}
+                  :timeout 5000
+                  :format          (ajax/json-request-format)
+                  :response-format (ajax/json-response-format {:keywords? true})
+                  :on-success [::success-sub-to-todo-list]
+                  :on-failure [::failure-sub-to-todo-list]}}))
+
+(reg-event-fx
+  ::success-sub-to-todo-list
+  (fn [db [_ res]]
+    (js/alert (:message res))))
+
+(reg-event-fx
+  ::failure-sub-to-todo-list
+  (fn [db [_ res]]
+    (js/alert (:message (:response res)))))
+
 
 (reg-fx
   :new-list
@@ -313,16 +326,28 @@
   :create-todo-list
   [(inject-cofx :local-store)]
   (fn [{:keys [db local-store]} [_ title]]
-    (let [id (allocate-next-id (:todo-lists local-store))]
-    (do 
-       (dispatch [:set-current-list id])
-      {:new-list         {:title title :id id}
-       :set-current-list id
-       :add-list-to-user id
-       :add-user-to-list id}
-       ))))
+    (println title)
+    {:http-xhrio {:method :post
+                  :uri "http://localhost:3000/todo-list"
+                  :params {:title title
+                           :list_of_todos {}
+                           :subscribed_users (vector (:current-user local-store))
+                           :username (:current-user local-store)}
+                  :timeout 5000
+                  :format          (ajax/json-request-format)
+                  :response-format (ajax/json-response-format {:keywords? true})
+                  :on-success [::success-create-todo-list]
+                  :on-failure [::failure-create-todo-list]}}))
 
+(reg-event-fx
+  ::success-create-todo-list
+  (fn [db [_ res]]
+    (dispatch [:set-current-list (:list_id res)])))
 
+(reg-event-db
+  ::failure-create-todo-list
+  (fn [db [_ res]]
+    (js/alert res)))
 
 
 ;; Subscriptions
