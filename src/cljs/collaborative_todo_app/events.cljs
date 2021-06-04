@@ -298,7 +298,7 @@
       (if todo-list
         (if (some #(= % id) (:subscriptions (get (:users local-store) (:current-user local-store))))
           (js/alert (str "You are already subscribed to the Todo List: " (:title todo-list)))
-          (do (dispatch [:set-current-list id])
+          (do (println "updated")
               {:add-list-to-user id
                :add-user-to-list id}))
         (do (js/alert "Code is invalid."
@@ -312,12 +312,18 @@
 (reg-event-fx
   :create-todo-list
   [(inject-cofx :local-store)]
-  (fn [{:keys [local-store]} [_ title]]
+  (fn [{:keys [db local-store]} [_ title]]
     (let [id (allocate-next-id (:todo-lists local-store))]
+    (do 
+       (dispatch [:set-current-list id])
       {:new-list         {:title title :id id}
+       :set-current-list id
        :add-list-to-user id
-       :add-user-to-list id
-       :set-current-list id})))
+       :add-user-to-list id}
+       ))))
+
+
+
 
 ;; Subscriptions
 

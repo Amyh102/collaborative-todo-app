@@ -112,7 +112,7 @@
   [display-dash]
   [:<>
    [:button#logout_button {:on-click #(dispatch [:logout nil])} "Log Out"]
-   [:button#dashboard_button {:on-click #((dispatch [:go-to-dashboard])
+   [:button#list-button {:on-click #((dispatch [:go-to-dashboard])
                                           (reset! display-dash true))} "Go back to Dashboard"]
    [:section#todoapp
     [task-entry]
@@ -132,8 +132,7 @@
            :value     @atom-value
            :on-change (fn [x] (reset! atom-value (.. x -target -value)))}])
 
-(defn dashboard
-  [display-dash]
+(defn dashboard [display-dash]
   (let [todo-list-id (reagent/atom "")
         new-list-title (reagent/atom "")
         subbed-lists @(subscribe [:subbed-lists])
@@ -141,28 +140,27 @@
     [:div
      [:button#logout_button {:on-click #(dispatch [:logout nil])} "Log Out"]
      [:h1 "My Todo Lists"]
-     "Have a code for an existing Todo list?"
+     [:p#dashboard-header "Have a code for an existing Todo list?"]
      [:br]
-     [:input {:type        "text"
+     [:input#dashboard-input {:type        "text"
               :placeholder "Enter code here"
-              :on-change   #(reset! todo-list-id (-> % .-target .-value))}]
-     [:input {:type     "button"
-              :value    "Add"
-              :on-click #(dispatch [:sub-to-todo-list (int @todo-list-id)])}]
+              :on-change   #(reset! todo-list-id (-> % .-target .-value))
+              :on-key-press #(if (= 13 (-> % .-charCode)) 
+                              ((reset! todo-list-id "jhgjhg")
+                                  (dispatch [:sub-to-todo-list (int @todo-list-id)])))}]
      [:br] [:br]
-     "Create a new Todo list:"
+     [:p#dashboard-header "Create a new Todo list:"]
      [:br]
-     [:input {:type        "text"
+     [:input#dashboard-input {:type        "text"
               :placeholder "Enter a title here"
-              :on-change   #(reset! new-list-title (-> % .-target .-value))}]
-     [:input {:type     "button"
-              :value    "Create"
-              :on-click #((reset! display-dash false)
-                          (dispatch [:create-todo-list @new-list-title]))}]
+              :on-change   #(reset! new-list-title (-> % .-target .-value))
+              :on-key-press #(if (= 13 (-> % .-charCode)) 
+                              ((reset! display-dash false)
+                                  (dispatch [:create-todo-list @new-list-title])))}]
      [:ul
       (for [id subbed-lists]
         ^{:key id} [:li
-                    [:input {:type "button"
+                    [:input#list-button {:type "button"
                              :value (:title (get all-todo-lists id))
                              :on-click #((reset! display-dash false)
                                          (dispatch [:set-current-list id]))}]])]]))
