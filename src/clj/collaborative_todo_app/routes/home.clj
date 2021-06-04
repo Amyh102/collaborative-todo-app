@@ -34,15 +34,33 @@
                                    (db/create-user! {:full_name full_name :username username :password password})
                                    {:status 200
                                     :body   {:result "Created Successfully"}})}}]
-   ["/users/subscriptions" {:summary    "updates subscription list of a user"
-                            :parameters {:body-params {:username string? :subscription integer? :add boolean?}}
-                            :handler    (fn [{{:keys [username subscription add]} :body-params :as req}]
-                                          (if add
-                                            (db/add-to-subscription-list! {:subscription subscription
-                                                                           :username     username})
-                                            (db/remove-from-subscription-list! {:subscription subscription
-                                                                                :username     username}))
-                                          {:status 200})}]
+   ["/users/subscriptions" {:put {:summary    "updates subscription list of a user"
+                                  :parameters {:body-params {:username string? :subscription integer? :add boolean?}}
+                                  :handler    (fn [{{:keys [username subscription add]} :body-params :as req}]
+                                                (let [todo-list (db/get-list! {:list_id subscription})
+                                                      user-subs (:subscriptions (db/get-user! {:username username}))]
+                                                  (if add
+                                                    (if todo-list
+                                                      (if (some #(= subscription %) user-subs)
+                                                        {:status 400
+                                                         :body   {:response false
+                                                                  :message  (str "You are already subscribed to "
+                                                                                 (:title todo-list))}}
+                                                        (do (db/add-to-subscription-list! {:subscription subscription
+                                                                                           :username     username})
+                                                            {:status 200
+                                                             :body   {:response true
+                                                                      :message  (str "Successfully subscribed to "
+                                                                                     (:title todo-list))}}))
+                                                      {:status 400
+                                                       :body   {:response false
+                                                                :message  "The given code does not exist"}})
+                                                    (do
+                                                      (db/remove-from-subscription-list! {:subscription subscription
+                                                                                          :username     username})
+                                                      {:status 200
+                                                       :body   {:response true
+                                                                :message  "removed"}}))))}}]
    ["/users/auth" {:get {:middleware [(fn [handler]
                                         (fn [{{:keys [username password]} :params :as req}]
                                           (let [user-info (db/get-user! {:username username})]
@@ -66,12 +84,18 @@
                                           (let [list_id (inc (:coalesce (db/get-max-id!)))]
                                             (handler (assoc-in req [:body-params :list_id] list_id)))))]
                          :summary    "create a todo list"
-                         :parameters {:body-params {:title string? :list_of_todos map? :subscribed_users vector?}}
-                         :handler    (fn [{{:keys [list_id title list_of_todos subscribed_users]} :body-params :as req}]
+                         :parameters {:body-params {:title            string?
+                                                    :list_of_todos    map?
+                                                    :subscribed_users vector?
+                                                    :username         string?}}
+                         :handler    (fn [{{:keys [list_id title list_of_todos subscribed_users username]}
+                                           :body-params :as req}]
                                        (db/create-list! {:list_id          list_id
                                                          :title            title
                                                          :list_of_todos    list_of_todos
                                                          :subscribed_users subscribed_users})
+                                       (db/add-to-subscription-list! {:subscription list_id
+                                                                      :username     username})
                                        {:status 200
                                         :body   {:response true
                                                  :list_id  list_id}})}
