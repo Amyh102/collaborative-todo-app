@@ -10,6 +10,7 @@ test-config.edn
 /.lein-*
 profiles.clj
 /.env
+/.calva
 .nrepl-port
 /.shadow-cljs
 package.json

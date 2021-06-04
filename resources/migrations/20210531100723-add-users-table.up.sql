@@ -9,10 +9,10 @@ $$
         );
         
         CREATE TABLE tasks (
-            list_id serial PRIMARY KEY,
+            list_id integer PRIMARY KEY NOT NULL UNIQUE,
             title  VARCHAR NOT NULL,
             list_of_todos jsonb,
-            subscribed_users integer[]
+            subscribed_users text[]
         );
     END
 $$;
